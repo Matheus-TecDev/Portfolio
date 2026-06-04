@@ -1,0 +1,266 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+  background: #05070a;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top left, rgba(56, 189, 248, 0.11), transparent 32rem),
+    radial-gradient(circle at 80% 15%, rgba(139, 92, 246, 0.08), transparent 30rem),
+    #05070a;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+::selection {
+  color: #031014;
+  background: #67e8f9;
+}
+
+@layer components {
+  .section {
+    @apply relative px-5 py-20 md:px-8 md:py-28;
+  }
+
+  .section-eyebrow {
+    @apply font-mono text-xs font-semibold uppercase tracking-[0.22em] text-cyan-300;
+  }
+
+  .nav-link {
+    @apply transition-colors duration-200 hover:text-cyan-200;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    @apply inline-flex h-11 items-center justify-center gap-2 rounded-md px-4 text-sm font-semibold transition duration-200;
+  }
+
+  .btn-primary {
+    @apply border border-cyan-300/30 bg-cyan-300 text-slate-950 shadow-blue-soft hover:bg-cyan-200;
+  }
+
+  .btn-secondary {
+    @apply border border-white/10 bg-white/[0.035] text-slate-200 hover:border-cyan-300/30 hover:bg-cyan-300/10 hover:text-cyan-100;
+  }
+
+  .panel {
+    @apply rounded-lg border border-white/[0.08] bg-white/[0.035] shadow-[inset_0_1px_0_rgba(255,255,255,0.04)] backdrop-blur;
+  }
+
+  .icon-box {
+    @apply grid size-11 place-items-center rounded-md border border-cyan-300/15 bg-cyan-300/10 text-cyan-200;
+  }
+
+  .tech-chip {
+    @apply rounded-md border border-white/[0.08] bg-slate-950/60 px-3 py-2 text-xs font-medium text-slate-300;
+  }
+
+  .project-card {
+    @apply rounded-lg border border-white/[0.08] bg-gradient-to-b from-white/[0.055] to-white/[0.025] p-6 shadow-[inset_0_1px_0_rgba(255,255,255,0.05)] transition duration-200 hover:-translate-y-1 hover:border-cyan-300/25 hover:shadow-blue-soft;
+  }
+
+  .project-tag {
+    @apply rounded border border-cyan-300/15 bg-cyan-300/[0.08] px-2.5 py-1.5 font-mono text-[11px] uppercase text-cyan-200;
+  }
+
+  .experience-row {
+    @apply flex min-h-12 items-center gap-3 rounded-md border border-white/[0.07] bg-slate-950/50 px-4 text-sm font-medium text-slate-300;
+  }
+}
+
+.hero-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(148, 163, 184, 0.055) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(148, 163, 184, 0.055) 1px, transparent 1px);
+  background-size: 64px 64px;
+  mask-image: linear-gradient(to bottom, black, transparent 88%);
+}
+
+.hero-grid::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(5, 7, 10, 0), #05070a 92%);
+}
+
+.glow {
+  position: absolute;
+  width: 34rem;
+  height: 34rem;
+  border-radius: 999px;
+  filter: blur(90px);
+  opacity: 0.24;
+  pointer-events: none;
+}
+
+.glow-blue {
+  top: 8rem;
+  left: -14rem;
+  background: #0ea5e9;
+}
+
+.glow-violet {
+  right: -16rem;
+  top: 10rem;
+  background: #7c3aed;
+}
+
+.status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  min-height: 2.5rem;
+  border: 1px solid rgba(34, 211, 238, 0.18);
+  border-radius: 0.5rem;
+  background: rgba(8, 11, 16, 0.72);
+  padding: 0 0.9rem;
+  color: #bae6fd;
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-size: 0.78rem;
+}
+
+.status-dot {
+  width: 0.52rem;
+  height: 0.52rem;
+  border-radius: 999px;
+  background: #22d3ee;
+  box-shadow: 0 0 18px rgba(34, 211, 238, 0.8);
+}
+
+.profile-shell {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(34, 211, 238, 0.16);
+  border-radius: 0.75rem;
+  background:
+    linear-gradient(135deg, rgba(56, 189, 248, 0.12), rgba(139, 92, 246, 0.08)),
+    #080b10;
+  padding: 0.75rem;
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.42), 0 0 48px rgba(56, 189, 248, 0.12);
+}
+
+.profile-shell::before {
+  content: "";
+  position: absolute;
+  inset: 0.75rem;
+  z-index: 2;
+  border-radius: 0.55rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  pointer-events: none;
+}
+
+.profile-photo {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border-radius: 0.55rem;
+  filter: saturate(0.9) contrast(1.04);
+}
+
+.profile-terminal {
+  position: absolute;
+  right: 1.5rem;
+  bottom: 1.5rem;
+  z-index: 3;
+  width: min(19rem, calc(100% - 3rem));
+  border: 1px solid rgba(34, 211, 238, 0.18);
+  border-radius: 0.5rem;
+  background: rgba(5, 7, 10, 0.82);
+  padding: 0.9rem;
+  color: #94a3b8;
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-size: 0.75rem;
+  line-height: 1.7;
+  backdrop-filter: blur(18px);
+}
+
+.roadmap-line {
+  position: relative;
+  display: grid;
+  gap: 1rem;
+}
+
+.roadmap-line::before {
+  content: "";
+  position: absolute;
+  left: 1.35rem;
+  top: 1.8rem;
+  bottom: 1.8rem;
+  width: 1px;
+  background: linear-gradient(to bottom, transparent, rgba(34, 211, 238, 0.45), rgba(139, 92, 246, 0.28), transparent);
+}
+
+.roadmap-step {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  min-height: 4.4rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 0.5rem;
+  background: rgba(255, 255, 255, 0.035);
+  padding: 0.85rem 1rem;
+  color: #e2e8f0;
+  font-weight: 600;
+}
+
+.roadmap-node {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  width: 2.7rem;
+  height: 2.7rem;
+  place-items: center;
+  border: 1px solid rgba(34, 211, 238, 0.25);
+  border-radius: 0.5rem;
+  background: #071018;
+  color: #67e8f9;
+}
+
+@media (min-width: 768px) {
+  .roadmap-line {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .roadmap-line::before {
+    left: 0;
+    right: 0;
+    top: 50%;
+    bottom: auto;
+    width: auto;
+    height: 1px;
+    transform: translateY(-50%);
+  }
+}
+
+@media (max-width: 480px) {
+  .profile-terminal {
+    position: relative;
+    right: auto;
+    bottom: auto;
+    width: 100%;
+    margin-top: 0.75rem;
+  }
+}
