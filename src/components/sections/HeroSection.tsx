@@ -38,6 +38,7 @@ export function HeroSection() {
                   className={index === 0 ? "btn-primary" : "btn-secondary"}
                   target={isExternal ? "_blank" : undefined}
                   rel={isExternal ? "noreferrer" : undefined}
+                  download={link.download}
                 >
                   <Icon size={18} />
                   {link.label}

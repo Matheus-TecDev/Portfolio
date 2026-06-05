@@ -14,8 +14,9 @@ export const links: LinkItem[] = [
   { label: "LinkedIn", href: "https://www.linkedin.com/in/matheusfreiredev/", icon: BriefcaseBusiness },
   {
     label: "Currículo",
-    href: "mailto:matheus.tecnodev@gmail.com?subject=Solicitacao%20de%20curriculo",
+    href: "/Curriculo_Matheus_Freire_Moderno.pdf",
     icon: FileText,
+    download: "Curriculo_Matheus_Freire_Moderno.pdf",
   },
   { label: "Contato", href: "#contato", icon: Mail },
 ];

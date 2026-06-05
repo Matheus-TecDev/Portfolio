@@ -4,6 +4,7 @@ export type LinkItem = {
   label: string;
   href: string;
   icon: LucideIcon;
+  download?: string;
 };
 
 export type SkillGroup = {
