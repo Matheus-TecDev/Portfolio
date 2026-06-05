@@ -82,9 +82,22 @@ body {
     @apply rounded border border-cyan-300/15 bg-cyan-300/[0.08] px-2.5 py-1.5 font-mono text-[11px] uppercase text-cyan-200;
   }
 
+  .project-label {
+    @apply font-mono text-[11px] font-semibold uppercase tracking-[0.16em] text-cyan-300;
+  }
+
+  .status-badge {
+    @apply rounded border border-white/[0.1] bg-white/[0.04] px-2.5 py-1.5 font-mono text-[11px] uppercase text-slate-300;
+  }
+
+  .status-production {
+    @apply border-cyan-300/20 bg-cyan-300/[0.08] text-cyan-200;
+  }
+
   .experience-row {
     @apply flex min-h-12 items-center gap-3 rounded-md border border-white/[0.07] bg-slate-950/50 px-4 text-sm font-medium text-slate-300;
   }
+
 }
 
 .hero-grid {

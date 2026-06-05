@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowDown, Cpu, ExternalLink, Server } from "lucide-react";
+import { ArrowDown, Cpu, Server } from "lucide-react";
 import {
   aboutHighlights,
   contacts,
@@ -56,6 +56,7 @@ function Hero() {
           Matheus Freire
         </a>
         <div className="hidden items-center gap-6 text-sm text-slate-400 md:flex">
+          <a href="#sobre" className="nav-link">Sobre</a>
           <a href="#competencias" className="nav-link">Competências</a>
           <a href="#projetos" className="nav-link">Projetos</a>
           <a href="#roadmap" className="nav-link">Roadmap</a>
@@ -70,7 +71,7 @@ function Hero() {
         <motion.div initial="hidden" animate="visible" variants={fadeUp} transition={{ duration: 0.65 }}>
           <div className="status-pill">
             <span className="status-dot" />
-            Backend, infra e ambientes de produção
+            TI corporativa, sistemas internos e deploys
           </div>
           <h1 className="mt-7 max-w-3xl text-5xl font-semibold leading-[0.98] text-white md:text-7xl">
             {profile.name}
@@ -104,9 +105,9 @@ function Hero() {
             <div className="profile-terminal">
               <div className="flex items-center gap-2 text-cyan-200">
                 <Cpu size={16} />
-                production-stack
+                production-context
               </div>
-              <span>linux • docker • api • sql • aws</span>
+              <span>react • fastapi • jwt • sql • linux • docker</span>
             </div>
           </div>
         </motion.div>
@@ -148,16 +149,16 @@ function Skills() {
     <section id="competencias" className="section">
       <SectionTitle
         eyebrow="Competências"
-        title="Base técnica para backend, infraestrutura e produção"
-        description="Organização por domínios de atuação, com foco em manutenção, deploy, segurança, dados e operação."
+        title="Competências organizadas por área de atuação"
+        description="Base técnica distribuída entre desenvolvimento, infraestrutura, dados, suporte e temas em evolução para ambientes de produção."
       />
-      <div className="mx-auto grid max-w-7xl gap-4 md:grid-cols-2 xl:grid-cols-5">
+      <div className="mx-auto grid max-w-7xl gap-4 md:grid-cols-2 xl:grid-cols-3">
         {skillGroups.map((group, index) => {
           const Icon = group.icon;
           return (
             <motion.article
               key={group.title}
-              className="panel flex min-h-[300px] flex-col p-6"
+              className="panel flex min-h-[240px] flex-col p-6"
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, amount: 0.2 }}
@@ -187,7 +188,7 @@ function Projects() {
       <SectionTitle
         eyebrow="Projetos"
         title="Trabalhos com foco operacional, dados, backend e deploy"
-        description="Projetos orientados a resolver problemas práticos de negócio, suporte, automação e infraestrutura."
+        description="Projetos orientados a resolver problemas práticos de negócio, suporte, automação, dados e infraestrutura."
       />
       <div className="mx-auto grid max-w-7xl gap-4 md:grid-cols-2 lg:grid-cols-3">
         {projects.map((project, index) => {
@@ -206,14 +207,26 @@ function Projects() {
                 <div className="icon-box">
                   <Icon size={21} />
                 </div>
-                <ExternalLink className="text-slate-600" size={18} />
+                <span className={`status-badge ${project.status === "Produção" ? "status-production" : ""}`}>
+                  {project.status}
+                </span>
               </div>
               <h3 className="mt-6 text-xl font-semibold text-white">{project.title}</h3>
-              <p className="mt-3 min-h-[84px] text-sm leading-7 text-slate-400">{project.description}</p>
-              <div className="mt-6 flex flex-wrap gap-2">
-                {project.tags.map((tag) => (
+              <p className="mt-3 text-sm leading-7 text-slate-400">{project.description}</p>
+              <div className="mt-5 flex flex-wrap gap-2">
+                {project.stack.map((tag) => (
                   <span key={tag} className="project-tag">{tag}</span>
                 ))}
+              </div>
+              <div className="mt-6 space-y-4">
+                <div>
+                  <span className="project-label">Problema resolvido</span>
+                  <p className="mt-2 text-sm leading-6 text-slate-400">{project.problem}</p>
+                </div>
+                <div>
+                  <span className="project-label">Impacto prático</span>
+                  <p className="mt-2 text-sm leading-6 text-slate-400">{project.impact}</p>
+                </div>
               </div>
             </motion.article>
           );
@@ -304,7 +317,7 @@ function Contact() {
           <div>
             <h2 className="text-3xl font-semibold text-white md:text-4xl">Vamos conversar sobre sistemas, infraestrutura e backend.</h2>
             <p className="mt-4 text-slate-400">
-              Links com placeholders editáveis em `src/data.ts`.
+              Desenvolvimento backend, infraestrutura, dados e deploys para ambientes corporativos.
             </p>
           </div>
           <div className="flex flex-wrap gap-3 md:justify-end">

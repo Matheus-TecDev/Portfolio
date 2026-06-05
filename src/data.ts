@@ -1,13 +1,14 @@
 import {
   Activity,
+  AppWindow,
   Boxes,
   BrainCircuit,
+  Braces,
+  BriefcaseBusiness,
   CloudCog,
   Code2,
   Container,
   Database,
-  Braces,
-  BriefcaseBusiness,
   LockKeyhole,
   Mail,
   Network,
@@ -15,6 +16,7 @@ import {
   ServerCog,
   ShieldCheck,
   Terminal,
+  UsersRound,
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 
@@ -24,6 +26,11 @@ export type LinkItem = {
   icon: LucideIcon;
 };
 
+export type Highlight = {
+  title: string;
+  description: string;
+  icon: LucideIcon;
+};
 export type SkillGroup = {
   title: string;
   icon: LucideIcon;
@@ -33,17 +40,26 @@ export type SkillGroup = {
 export type Project = {
   title: string;
   description: string;
-  tags: string[];
+  stack: string[];
+  problem: string;
+  impact: string;
+  status: "Produção" | "Em desenvolvimento" | "Estudo";
+  icon: LucideIcon;
+};
+
+export type ArchitectureStep = {
+  label: string;
+  detail: string;
   icon: LucideIcon;
 };
 
 export const profile = {
   name: "Matheus Freire",
-  role: "Backend • Infraestrutura • Cloud • DevOps",
+  role: "Desenvolvimento • Infraestrutura • Suporte • Dados • Deploy",
   summary:
-    "Profissional de TI com atuação prática em desenvolvimento web, backend, infraestrutura, suporte, redes, banco de dados e deploys.",
+    "Atuo em TI corporativa conectando desenvolvimento de sistemas internos, infraestrutura, suporte, redes, banco de dados e deploys em ambientes reais de operação.",
   evolution:
-    "Atualmente evoluindo para um perfil forte em Backend, Arquitetura, Linux, Redes, Docker, Cloud AWS, Segurança, Observabilidade e DevOps.",
+    "Meu foco de evolução está em Backend, Arquitetura, Linux, Docker, Cloud AWS, Bancos de Dados, Segurança, Observabilidade e DevOps.",
   photo: "/profile-matheus-placeholder.png",
 };
 
@@ -55,69 +71,92 @@ export const links: LinkItem[] = [
 ];
 
 export const aboutHighlights = [
-  "Experiência prática com sistemas corporativos e rotinas operacionais reais.",
-  "Atuação em infraestrutura, redes, suporte técnico, banco de dados e deploys.",
-  "Foco em backend, arquitetura, automação e ambientes de produção.",
+  "Atuo na equipe de TI da A&Cia Móveis, apoiando a operação com desenvolvimento de sistemas internos, suporte técnico e evolução de processos digitais.",
+  "Tenho experiência prática com infraestrutura, redes, banco de dados, sistemas corporativos e deploys, conectando demandas do negócio a soluções técnicas utilizáveis.",
+  "Minha evolução estratégica está orientada para Backend, Cloud e Arquitetura, com atenção a Linux, Docker, segurança, observabilidade e ambientes de produção.",
 ];
 
 export const skillGroups: SkillGroup[] = [
   {
     title: "Backend",
     icon: Code2,
-    items: ["Python", "FastAPI", "APIs REST", "JWT", "Autenticação", "Controle de acesso"],
+    items: ["Python", "FastAPI", "APIs REST", "JWT"],
   },
   {
-    title: "Infraestrutura e DevOps",
+    title: "Frontend",
+    icon: AppWindow,
+    items: ["React", "Vite", "TypeScript", "JavaScript"],
+  },
+  {
+    title: "Infra/DevOps",
     icon: ServerCog,
-    items: ["Linux", "Docker", "Docker Compose", "Nginx", "Deploy", "GitHub Container Registry", "Railway"],
+    items: ["Linux", "Docker", "Docker Compose", "Nginx", "Deploy"],
   },
   {
     title: "Banco de Dados",
     icon: Database,
-    items: ["SQL", "Firebird", "MySQL", "PostgreSQL", "Modelagem Relacional"],
+    items: ["MySQL", "Firebird", "SQL"],
   },
   {
-    title: "Cloud e Segurança",
-    icon: ShieldCheck,
-    items: ["AWS", "Redes", "Permissões", "Autorização", "Boas práticas de produção"],
+    title: "Redes/Suporte",
+    icon: Network,
+    items: ["VPN", "Active Directory", "Redes", "Suporte corporativo"],
   },
   {
-    title: "Observabilidade",
+    title: "Em evolução",
     icon: Activity,
-    items: ["Logs", "Monitoramento", "Diagnóstico", "Métricas"],
+    items: ["AWS", "Observabilidade", "Segurança", "CI/CD"],
   },
 ];
 
 export const projects: Project[] = [
   {
     title: "Área do Cliente",
-    description: "Portal web com autenticação, perfis de acesso, dashboards e regras de autorização.",
-    tags: ["Auth", "Dashboards", "RBAC"],
+    description:
+      "Sistema web em produção para acesso segmentado a dados corporativos, com perfis Admin, Vendedor, Cobrador e Cliente.",
+    stack: ["React", "FastAPI", "JWT", "APIs REST", "Banco corporativo"],
+    problem: "Centralizar acesso a informações internas com autenticação, autorização e regras por perfil.",
+    impact: "Apoia rotinas comerciais e operacionais com controle de acesso e consulta estruturada de dados.",
+    status: "Produção",
     icon: LockKeyhole,
   },
   {
     title: "Saneamento App",
-    description: "Aplicação containerizada com backend, frontend, MySQL e deploy em servidor Linux.",
-    tags: ["Docker", "MySQL", "Linux"],
+    description:
+      "Aplicação containerizada com backend, frontend e banco de dados, organizada para execução em servidor Linux.",
+    stack: ["Docker Compose", "Linux", "Backend", "Frontend", "MySQL"],
+    problem: "Empacotar serviços da aplicação em um fluxo de deploy mais previsível e replicável.",
+    impact: "Reduz complexidade operacional ao integrar serviços em containers e padronizar a execução.",
+    status: "Em desenvolvimento",
     icon: Container,
   },
   {
     title: "Higienização de Bairros",
-    description: "Tratamento, padronização e saneamento de dados em banco Firebird.",
-    tags: ["Firebird", "SQL", "Dados"],
+    description:
+      "Projeto de padronização e limpeza de dados em base Firebird usando SQL para corrigir inconsistências cadastrais.",
+    stack: ["Firebird", "SQL", "Dados corporativos"],
+    problem: "Corrigir variações, duplicidades e registros inconsistentes em cadastros utilizados pela operação.",
+    impact: "Melhora qualidade dos dados e reduz falhas em consultas, relatórios e processos internos.",
+    status: "Produção",
     icon: Database,
   },
   {
     title: "Kanban TI / Bitrix24",
-    description: "Estruturação de processos internos, chamados e fluxos operacionais.",
-    tags: ["Processos", "Chamados", "Operações"],
+    description: "Organização de fluxos internos para demandas de TI, acompanhamento de chamados e processos operacionais.",
+    stack: ["Bitrix24", "Processos", "Suporte", "Operação"],
+    problem: "Dar visibilidade às demandas técnicas e reduzir perda de contexto entre solicitações.",
+    impact: "Apoia priorização, acompanhamento e registro de atendimentos da equipe de TI.",
+    status: "Em desenvolvimento",
     icon: Boxes,
   },
   {
     title: "App de Cobrança",
-    description: "Sistema de apoio operacional para vendedores e cobradores.",
-    tags: ["Operação", "Web App", "Fluxos"],
-    icon: Terminal,
+    description: "Sistema de apoio operacional para consulta e execução de fluxos de cobrança por vendedores e cobradores.",
+    stack: ["Web App", "APIs", "Regras de negócio", "Operação"],
+    problem: "Apoiar equipes de campo com acesso mais direto a informações e rotinas de cobrança.",
+    impact: "Contribui para padronização do processo e melhora a disponibilidade de dados operacionais.",
+    status: "Estudo",
+    icon: UsersRound,
   },
 ];
 
