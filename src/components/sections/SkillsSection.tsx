@@ -6,11 +6,7 @@ import { SectionTitle } from "../layout/SectionTitle";
 export function SkillsSection() {
   return (
     <section id="competencias" className="section">
-      <SectionTitle
-        eyebrow="Competências"
-        title="O que sei hoje"
-        description="APIs, bancos de dados, Linux, Docker e sistemas internos."
-      />
+      <SectionTitle eyebrow="Competências" title="Competências principais" />
       <div className="mx-auto grid max-w-7xl gap-3 sm:grid-cols-2 lg:grid-cols-5">
         {skillGroups.map((group, index) => {
           const Icon = group.icon;
@@ -25,10 +21,10 @@ export function SkillsSection() {
               transition={{ duration: 0.45, delay: index * 0.05 }}
             >
               <div className="icon-box">
-                <Icon size={21} />
+                <Icon size={19} />
               </div>
-              <h3 className="mt-4 text-base font-semibold text-white">{group.title}</h3>
-              <div className="mt-4 flex flex-wrap gap-2">
+              <h3 className="mt-3 text-base font-semibold text-white">{group.title}</h3>
+              <div className="mt-3 flex flex-wrap gap-2">
                 {group.items.map((item) => (
                   <span key={item} className="tech-chip">{item}</span>
                 ))}

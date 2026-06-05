@@ -13,8 +13,6 @@ export function Header() {
         <a href="#sobre" className="nav-link">Sobre</a>
         <a href="#competencias" className="nav-link">Competências</a>
         <a href="#projetos" className="nav-link">Projetos</a>
-        <a href="#arquitetura" className="nav-link">Arquitetura</a>
-        <a href="#roadmap" className="nav-link">Roadmap</a>
         <a href="#contato" className="nav-link">Contato</a>
       </div>
     </nav>

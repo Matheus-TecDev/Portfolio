@@ -10,7 +10,7 @@ type SectionTitleProps = {
 export function SectionTitle({ eyebrow, title, description }: SectionTitleProps) {
   return (
     <motion.div
-      className="mx-auto mb-6 max-w-3xl text-center"
+      className="mx-auto mb-5 max-w-3xl text-center"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.35 }}
@@ -18,8 +18,8 @@ export function SectionTitle({ eyebrow, title, description }: SectionTitleProps)
       transition={{ duration: 0.5 }}
     >
       <span className="section-eyebrow">{eyebrow}</span>
-      <h2 className="mt-4 text-3xl font-semibold text-white md:text-4xl">{title}</h2>
-      {description ? <p className="mt-4 text-base text-slate-400 md:text-lg">{description}</p> : null}
+      <h2 className="mt-3 text-3xl font-semibold text-white md:text-4xl">{title}</h2>
+      {description ? <p className="mt-3 text-base text-slate-400">{description}</p> : null}
     </motion.div>
   );
 }

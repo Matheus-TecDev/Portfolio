@@ -12,45 +12,44 @@ type ProjectCardProps = {
 
 export function ProjectCard({ project, index, variant = "standard" }: ProjectCardProps) {
   const Icon = project.icon;
-  const isFeatured = variant === "featured";
-  const primaryLink = project.links?.[0];
-  const extraLinks = project.links?.slice(1) ?? [];
+  const isCompact = variant === "compact";
   const visibleTags = project.stack.slice(0, 6);
 
   return (
     <motion.article
-      className={`project-card ${isFeatured ? "project-card-featured" : ""}`}
+      className={`project-card ${isCompact ? "project-card-compact" : ""}`}
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.25 }}
       variants={fadeUp}
       transition={{ duration: 0.45, delay: index * 0.06 }}
     >
-      <div className="flex items-start gap-4">
+      <div className="flex items-start justify-between gap-4">
         <div className="icon-box">
-          <Icon size={21} />
+          <Icon size={19} />
         </div>
+        <span className="status-badge">{project.status}</span>
       </div>
-      <div className="mt-5">
+      <div className="mt-4">
         {project.type ? <span className="project-type">{project.type}</span> : null}
-        <h3 className="mt-2 text-xl font-semibold text-white">{project.title}</h3>
+        <h3 className="mt-2 text-lg font-semibold text-white">{project.title}</h3>
       </div>
-      <p className="mt-3 min-h-[3.25rem] text-sm leading-6 text-slate-400">{project.description}</p>
-      <div className="mt-4 flex flex-wrap gap-2">
+      <p className="mt-2 min-h-[2.75rem] text-sm leading-6 text-slate-400">{project.description}</p>
+      <div className="mt-3 flex flex-wrap gap-2">
         {visibleTags.map((tag) => (
           <ProjectTag key={tag}>{tag}</ProjectTag>
         ))}
       </div>
-      <div className="mt-5 flex flex-wrap gap-2">
-        {primaryLink ? (
-          <a href={primaryLink.href} className="project-link" target="_blank" rel="noreferrer">
+      <div className="mt-4 flex flex-wrap gap-2">
+        {project.links?.map((link) => (
+          <a key={link.href} href={link.href} className="project-link" target="_blank" rel="noreferrer">
             <ExternalLink size={14} />
-            GitHub
+            {link.label}
           </a>
-        ) : null}
+        ))}
         <details className="project-details">
-          <summary>Ver detalhes</summary>
-          <div className="mt-4 space-y-4">
+          <summary>Detalhes</summary>
+          <div className="mt-4 space-y-3">
             {project.context ? (
               <div>
                 <span className="project-label">Contexto</span>
@@ -71,23 +70,6 @@ export function ProjectCard({ project, index, variant = "standard" }: ProjectCar
               <div>
                 <span className="project-label">Impacto</span>
                 <p className="mt-2 text-sm leading-6 text-slate-400">{project.impact}</p>
-              </div>
-            ) : null}
-            <div>
-              <span className="project-label">Status</span>
-              <p className="mt-2 text-sm leading-6 text-slate-400">{project.status}</p>
-            </div>
-            {extraLinks.length ? (
-              <div>
-                <span className="project-label">Links extras</span>
-                <div className="mt-3 flex flex-wrap gap-2">
-                  {extraLinks.map((link) => (
-                    <a key={link.href} href={link.href} className="project-link" target="_blank" rel="noreferrer">
-                      <ExternalLink size={14} />
-                      {link.label}
-                    </a>
-                  ))}
-                </div>
               </div>
             ) : null}
           </div>

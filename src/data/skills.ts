@@ -8,7 +8,7 @@ export const skillGroups: SkillGroup[] = [
     items: ["Python", "FastAPI", "APIs REST", "JWT"],
   },
   {
-    title: "Infra/DevOps",
+    title: "Infraestrutura",
     icon: ServerCog,
     items: ["Linux", "Docker", "Docker Compose", "Nginx", "Deploy"],
   },
@@ -25,6 +25,6 @@ export const skillGroups: SkillGroup[] = [
   {
     title: "Em evolução",
     icon: Activity,
-    items: ["AWS", "Observabilidade", "Segurança", "CI/CD"],
+    items: ["AWS", "Segurança", "Observabilidade", "CI/CD"],
   },
 ];

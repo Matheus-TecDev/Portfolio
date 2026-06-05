@@ -75,7 +75,7 @@ body::after {
 
 @layer components {
   .section {
-    @apply relative z-10 px-5 py-11 md:px-8 md:py-16;
+    @apply relative z-10 px-5 py-8 md:px-8 md:py-11;
   }
 
   .section-eyebrow {
@@ -107,36 +107,28 @@ body::after {
     @apply grid size-11 place-items-center rounded-md border border-cyan-300/15 bg-cyan-300/10 text-cyan-200;
   }
 
-  .highlight-card {
-    @apply flex min-h-28 gap-4 rounded-lg border border-white/[0.08] bg-white/[0.035] p-5 shadow-[inset_0_1px_0_rgba(255,255,255,0.04)] backdrop-blur transition duration-300 hover:-translate-y-1 hover:border-cyan-300/40 hover:bg-cyan-300/[0.055] hover:shadow-[0_0_36px_rgba(34,211,238,0.17),0_0_28px_rgba(124,58,237,0.09)];
-  }
-
   .skill-card {
-    @apply flex min-h-44 flex-col rounded-lg border border-white/[0.08] bg-white/[0.035] p-5 shadow-[inset_0_1px_0_rgba(255,255,255,0.04)] backdrop-blur transition duration-300 hover:-translate-y-1 hover:border-cyan-300/40 hover:bg-cyan-300/[0.055] hover:shadow-[0_0_36px_rgba(34,211,238,0.17),0_0_28px_rgba(124,58,237,0.09)];
+    @apply flex min-h-36 flex-col rounded-lg border border-white/[0.08] bg-white/[0.035] p-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.04)] backdrop-blur transition duration-300 hover:-translate-y-1 hover:border-cyan-300/40 hover:bg-cyan-300/[0.055] hover:shadow-[0_0_36px_rgba(34,211,238,0.17),0_0_28px_rgba(124,58,237,0.09)];
   }
 
   .tech-chip {
-    @apply rounded-md border border-white/[0.08] bg-slate-950/60 px-3 py-2 text-xs font-medium text-slate-300;
+    @apply rounded-md border border-white/[0.08] bg-slate-950/60 px-2.5 py-1.5 text-xs font-medium text-slate-300;
   }
 
   .project-card {
-    @apply rounded-lg border border-white/[0.08] bg-gradient-to-b from-white/[0.06] to-white/[0.025] p-5 shadow-[inset_0_1px_0_rgba(255,255,255,0.05)] backdrop-blur transition duration-300 hover:-translate-y-1 hover:border-cyan-300/45 hover:bg-cyan-300/[0.045] hover:shadow-[0_0_42px_rgba(34,211,238,0.18),0_0_30px_rgba(124,58,237,0.1),inset_0_1px_0_rgba(255,255,255,0.07)];
-  }
-
-  .project-card-featured {
-    @apply p-5;
+    @apply rounded-lg border border-white/[0.08] bg-gradient-to-b from-white/[0.06] to-white/[0.025] p-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.05)] backdrop-blur transition duration-300 hover:-translate-y-1 hover:border-cyan-300/45 hover:bg-cyan-300/[0.045] hover:shadow-[0_0_42px_rgba(34,211,238,0.18),0_0_30px_rgba(124,58,237,0.1),inset_0_1px_0_rgba(255,255,255,0.07)];
   }
 
   .project-card-compact {
-    @apply p-5;
+    @apply p-4;
   }
 
   .project-group {
-    @apply mx-auto max-w-7xl space-y-4;
+    @apply mx-auto max-w-7xl space-y-3;
   }
 
   .project-tag {
-    @apply rounded border border-cyan-300/15 bg-cyan-300/[0.08] px-2.5 py-1.5 font-mono text-[11px] uppercase text-cyan-200;
+    @apply rounded border border-cyan-300/15 bg-cyan-300/[0.08] px-2 py-1 font-mono text-[10px] uppercase text-cyan-200;
   }
 
   .project-type {
@@ -152,7 +144,7 @@ body::after {
   }
 
   .project-link {
-    @apply inline-flex h-9 items-center justify-center gap-2 rounded-md border border-white/[0.1] bg-white/[0.035] px-3 text-xs font-semibold text-slate-300 transition hover:border-cyan-300/25 hover:bg-cyan-300/10 hover:text-cyan-100;
+    @apply inline-flex h-8 items-center justify-center gap-2 rounded-md border border-white/[0.1] bg-white/[0.035] px-3 text-xs font-semibold text-slate-300 transition hover:border-cyan-300/25 hover:bg-cyan-300/10 hover:text-cyan-100;
   }
 
   .project-details {
@@ -161,7 +153,7 @@ body::after {
 
   .project-details > summary,
   .archive-details > summary {
-    @apply inline-flex h-9 cursor-pointer list-none items-center justify-center rounded-md border border-cyan-300/15 bg-cyan-300/[0.08] px-3 text-xs font-semibold text-cyan-100 transition hover:border-cyan-300/35 hover:bg-cyan-300/[0.14];
+    @apply inline-flex h-8 cursor-pointer list-none items-center justify-center rounded-md border border-cyan-300/15 bg-cyan-300/[0.08] px-3 text-xs font-semibold text-cyan-100 transition hover:border-cyan-300/35 hover:bg-cyan-300/[0.14];
   }
 
   .project-details > summary::-webkit-details-marker,
@@ -170,39 +162,15 @@ body::after {
   }
 
   .archive-details {
-    @apply rounded-lg border border-white/[0.08] bg-white/[0.03] p-5 backdrop-blur transition duration-300 hover:-translate-y-1 hover:border-cyan-300/35 hover:bg-cyan-300/[0.04] hover:shadow-[0_0_36px_rgba(34,211,238,0.14),0_0_24px_rgba(124,58,237,0.08)];
+    @apply rounded-lg border border-white/[0.08] bg-white/[0.03] p-4 backdrop-blur transition duration-300 hover:-translate-y-1 hover:border-cyan-300/35 hover:bg-cyan-300/[0.04] hover:shadow-[0_0_36px_rgba(34,211,238,0.14),0_0_24px_rgba(124,58,237,0.08)];
   }
 
-  .archive-row {
-    @apply rounded-md border border-white/[0.07] bg-slate-950/45 p-4 transition duration-300 hover:-translate-y-0.5 hover:border-cyan-300/30 hover:bg-cyan-300/[0.04] hover:shadow-[0_0_26px_rgba(34,211,238,0.11),0_0_18px_rgba(124,58,237,0.06)];
+  .archive-chip {
+    @apply rounded-md border border-white/[0.08] bg-slate-950/50 px-3 py-2 text-xs font-medium text-slate-300;
   }
 
   .status-badge {
-    @apply rounded border border-white/[0.1] bg-white/[0.04] px-2.5 py-1.5 font-mono text-[11px] uppercase text-slate-300;
-  }
-
-  .status-production {
-    @apply border-cyan-300/20 bg-cyan-300/[0.08] text-cyan-200;
-  }
-
-  .experience-row {
-    @apply flex min-h-12 items-center gap-3 rounded-md border border-white/[0.07] bg-slate-950/50 px-4 text-sm font-medium text-slate-300;
-  }
-
-  .architecture-panel {
-    @apply mx-auto grid max-w-7xl gap-4 rounded-lg border border-white/[0.08] bg-white/[0.025] p-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.04)] md:grid-cols-5 md:p-5;
-  }
-
-  .architecture-item {
-    @apply relative flex flex-col gap-3 md:flex-row md:items-stretch;
-  }
-
-  .architecture-card {
-    @apply flex min-h-32 w-full flex-col gap-4 rounded-md border border-white/[0.08] bg-slate-950/60 p-5 transition duration-300 hover:-translate-y-1 hover:border-cyan-300/35 hover:bg-cyan-300/[0.045] hover:shadow-[0_0_32px_rgba(34,211,238,0.14),0_0_22px_rgba(124,58,237,0.08)];
-  }
-
-  .architecture-arrow {
-    @apply mx-auto rotate-90 text-cyan-300/70 md:absolute md:-right-5 md:top-1/2 md:z-10 md:mx-0 md:-translate-y-1/2 md:rotate-0;
+    @apply rounded border border-white/[0.1] bg-white/[0.04] px-2 py-1 font-mono text-[10px] uppercase text-slate-300;
   }
 
 }
@@ -329,65 +297,6 @@ body::after {
   font-size: 0.75rem;
   line-height: 1.7;
   backdrop-filter: blur(18px);
-}
-
-.roadmap-line {
-  position: relative;
-  display: grid;
-  gap: 1rem;
-}
-
-.roadmap-line::before {
-  content: "";
-  position: absolute;
-  left: 1.35rem;
-  top: 1.8rem;
-  bottom: 1.8rem;
-  width: 1px;
-  background: linear-gradient(to bottom, transparent, rgba(34, 211, 238, 0.45), rgba(139, 92, 246, 0.28), transparent);
-}
-
-.roadmap-step {
-  position: relative;
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  min-height: 4.4rem;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 0.5rem;
-  background: rgba(255, 255, 255, 0.035);
-  padding: 0.85rem 1rem;
-  color: #e2e8f0;
-  font-weight: 600;
-}
-
-.roadmap-node {
-  position: relative;
-  z-index: 1;
-  display: grid;
-  width: 2.7rem;
-  height: 2.7rem;
-  place-items: center;
-  border: 1px solid rgba(34, 211, 238, 0.25);
-  border-radius: 0.5rem;
-  background: #071018;
-  color: #67e8f9;
-}
-
-@media (min-width: 768px) {
-  .roadmap-line {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-
-  .roadmap-line::before {
-    left: 0;
-    right: 0;
-    top: 50%;
-    bottom: auto;
-    width: auto;
-    height: 1px;
-    transform: translateY(-50%);
-  }
 }
 
 @media (max-width: 480px) {
