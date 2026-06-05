@@ -6,7 +6,7 @@ export const profile = {
   role: "Backend • Infraestrutura • Deploy",
   summary:
     "Atuo com desenvolvimento, infraestrutura, bancos de dados e deploys em ambiente corporativo.",
-  photo: "/profile-matheus-placeholder.png",
+  photo: "/EU.jpeg",
 };
 
 export const links: LinkItem[] = [
