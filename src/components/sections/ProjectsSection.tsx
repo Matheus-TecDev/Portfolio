@@ -1,25 +1,27 @@
-import { otherProjects, featuredProjects } from "../../data/projects";
+import { ExternalLink } from "lucide-react";
+import { featuredProjects } from "../../data/projects";
 import { SectionTitle } from "../layout/SectionTitle";
-import { ProjectGroup } from "../projects/ProjectGroup";
+import { ProjectCard } from "../projects/ProjectCard";
+
+const repositoriesUrl = "https://github.com/Matheus-TecDev?tab=repositories";
 
 export function ProjectsSection() {
   return (
     <section id="projetos" className="section">
       <SectionTitle
         eyebrow="Projetos"
-        title="Projetos principais"
-        description="Sistemas corporativos, APIs, integrações, dados e deploys."
+        title="Projetos"
+        description="Projeto principal em destaque no momento."
       />
-      <div className="space-y-5">
-        <ProjectGroup projects={featuredProjects} variant="featured" />
-        <details className="archive-details mx-auto max-w-7xl">
-          <summary>Outros projetos</summary>
-          <ul className="mt-4 flex flex-wrap gap-2">
-            {otherProjects.map((project) => (
-              <li key={project} className="archive-chip">{project}</li>
-            ))}
-          </ul>
-        </details>
+      <div className="mx-auto max-w-3xl space-y-5">
+        <ProjectCard project={featuredProjects[0]} index={0} variant="featured" />
+        <div className="flex flex-col items-start gap-3 border-t border-white/[0.08] pt-4 sm:flex-row sm:items-center sm:justify-between">
+          <p className="text-sm font-medium text-slate-400">Ver todos os projetos no GitHub →</p>
+          <a href={repositoriesUrl} className="btn-secondary" target="_blank" rel="noreferrer">
+            <ExternalLink size={18} />
+            Ver repositórios
+          </a>
+        </div>
       </div>
     </section>
   );

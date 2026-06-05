@@ -14,6 +14,7 @@ export function ProjectCard({ project, index, variant = "standard" }: ProjectCar
   const Icon = project.icon;
   const isCompact = variant === "compact";
   const visibleTags = project.stack.slice(0, 6);
+  const hasDetails = Boolean(project.context || project.technicalPoints?.length || project.impact);
 
   return (
     <motion.article
@@ -34,7 +35,7 @@ export function ProjectCard({ project, index, variant = "standard" }: ProjectCar
         {project.type ? <span className="project-type">{project.type}</span> : null}
         <h3 className="mt-2 text-lg font-semibold text-white">{project.title}</h3>
       </div>
-      <p className="mt-2 min-h-[2.75rem] text-sm leading-6 text-slate-400">{project.description}</p>
+      <p className="mt-2 text-sm leading-6 text-slate-400">{project.description}</p>
       <div className="mt-3 flex flex-wrap gap-2">
         {visibleTags.map((tag) => (
           <ProjectTag key={tag}>{tag}</ProjectTag>
@@ -47,33 +48,35 @@ export function ProjectCard({ project, index, variant = "standard" }: ProjectCar
             {link.label}
           </a>
         ))}
-        <details className="project-details">
-          <summary>Detalhes</summary>
-          <div className="mt-4 space-y-3">
-            {project.context ? (
-              <div>
-                <span className="project-label">Contexto</span>
-                <p className="mt-2 text-sm leading-6 text-slate-400">{project.context}</p>
-              </div>
-            ) : null}
-            {project.technicalPoints?.length ? (
-              <div>
-                <span className="project-label">Pontos técnicos</span>
-                <ul className="mt-3 grid gap-2 text-sm leading-6 text-slate-400 sm:grid-cols-2">
-                  {project.technicalPoints.map((point) => (
-                    <li key={point} className="project-point">{point}</li>
-                  ))}
-                </ul>
-              </div>
-            ) : null}
-            {project.impact ? (
-              <div>
-                <span className="project-label">Impacto</span>
-                <p className="mt-2 text-sm leading-6 text-slate-400">{project.impact}</p>
-              </div>
-            ) : null}
-          </div>
-        </details>
+        {hasDetails ? (
+          <details className="project-details">
+            <summary>Detalhes</summary>
+            <div className="mt-4 space-y-3">
+              {project.context ? (
+                <div>
+                  <span className="project-label">Contexto</span>
+                  <p className="mt-2 text-sm leading-6 text-slate-400">{project.context}</p>
+                </div>
+              ) : null}
+              {project.technicalPoints?.length ? (
+                <div>
+                  <span className="project-label">Pontos técnicos</span>
+                  <ul className="mt-3 grid gap-2 text-sm leading-6 text-slate-400 sm:grid-cols-2">
+                    {project.technicalPoints.map((point) => (
+                      <li key={point} className="project-point">{point}</li>
+                    ))}
+                  </ul>
+                </div>
+              ) : null}
+              {project.impact ? (
+                <div>
+                  <span className="project-label">Impacto</span>
+                  <p className="mt-2 text-sm leading-6 text-slate-400">{project.impact}</p>
+                </div>
+              ) : null}
+            </div>
+          </details>
+        ) : null}
       </div>
     </motion.article>
   );
