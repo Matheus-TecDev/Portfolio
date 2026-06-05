@@ -1,9 +1,11 @@
 import { motion } from "framer-motion";
-import { ArrowDown, Cpu, Server } from "lucide-react";
+import { ArrowDown, ChevronRight, Cpu, Server } from "lucide-react";
 import {
   aboutHighlights,
+  architectureFlow,
   contacts,
   experience,
+  heroHighlights,
   links,
   profile,
   projects,
@@ -59,6 +61,7 @@ function Hero() {
           <a href="#sobre" className="nav-link">Sobre</a>
           <a href="#competencias" className="nav-link">Competências</a>
           <a href="#projetos" className="nav-link">Projetos</a>
+          <a href="#arquitetura" className="nav-link">Arquitetura</a>
           <a href="#roadmap" className="nav-link">Roadmap</a>
           <a href="#contato" className="nav-link">Contato</a>
         </div>
@@ -111,6 +114,37 @@ function Hero() {
             </div>
           </div>
         </motion.div>
+      </div>
+    </section>
+  );
+}
+
+function Highlights() {
+  return (
+    <section className="section pt-8 md:pt-12">
+      <div className="mx-auto grid max-w-7xl gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        {heroHighlights.map((item, index) => {
+          const Icon = item.icon;
+          return (
+            <motion.article
+              key={item.title}
+              className="highlight-card"
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.25 }}
+              variants={fadeUp}
+              transition={{ duration: 0.45, delay: index * 0.05 }}
+            >
+              <div className="icon-box">
+                <Icon size={20} />
+              </div>
+              <div>
+                <h3 className="text-base font-semibold text-white">{item.title}</h3>
+                <p className="mt-2 text-sm leading-6 text-slate-400">{item.description}</p>
+              </div>
+            </motion.article>
+          );
+        })}
       </div>
     </section>
   );
@@ -236,6 +270,46 @@ function Projects() {
   );
 }
 
+function Architecture() {
+  return (
+    <section id="arquitetura" className="section">
+      <SectionTitle
+        eyebrow="Arquitetura"
+        title="Fluxo técnico de aplicações em produção"
+        description="Visão simplificada dos elementos que conectam frontend, backend, autenticação, dados e deploy."
+      />
+      <motion.div
+        className="architecture-panel"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.3 }}
+        variants={fadeUp}
+        transition={{ duration: 0.5 }}
+      >
+        {architectureFlow.map((step, index) => {
+          const Icon = step.icon;
+          return (
+            <div key={step.label} className="architecture-item">
+              <div className="architecture-card">
+                <div className="icon-box">
+                  <Icon size={20} />
+                </div>
+                <div>
+                  <h3 className="text-base font-semibold text-white">{step.label}</h3>
+                  <p className="mt-2 text-sm leading-6 text-slate-400">{step.detail}</p>
+                </div>
+              </div>
+              {index < architectureFlow.length - 1 ? (
+                <ChevronRight className="architecture-arrow" size={22} />
+              ) : null}
+            </div>
+          );
+        })}
+      </motion.div>
+    </section>
+  );
+}
+
 function Experience() {
   return (
     <section id="experiencia" className="section">
@@ -344,9 +418,11 @@ export default function App() {
   return (
     <main className="min-h-screen bg-graphite-950 text-slate-200">
       <Hero />
+      <Highlights />
       <About />
       <Skills />
       <Projects />
+      <Architecture />
       <Experience />
       <Roadmap />
       <Contact />

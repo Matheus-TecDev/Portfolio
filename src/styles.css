@@ -70,6 +70,10 @@ body {
     @apply grid size-11 place-items-center rounded-md border border-cyan-300/15 bg-cyan-300/10 text-cyan-200;
   }
 
+  .highlight-card {
+    @apply flex min-h-36 gap-4 rounded-lg border border-white/[0.08] bg-white/[0.035] p-5 shadow-[inset_0_1px_0_rgba(255,255,255,0.04)] backdrop-blur transition duration-200 hover:border-cyan-300/20 hover:bg-white/[0.05];
+  }
+
   .tech-chip {
     @apply rounded-md border border-white/[0.08] bg-slate-950/60 px-3 py-2 text-xs font-medium text-slate-300;
   }
@@ -96,6 +100,22 @@ body {
 
   .experience-row {
     @apply flex min-h-12 items-center gap-3 rounded-md border border-white/[0.07] bg-slate-950/50 px-4 text-sm font-medium text-slate-300;
+  }
+
+  .architecture-panel {
+    @apply mx-auto grid max-w-7xl gap-4 rounded-lg border border-white/[0.08] bg-white/[0.025] p-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.04)] md:grid-cols-5 md:p-5;
+  }
+
+  .architecture-item {
+    @apply relative flex flex-col gap-3 md:flex-row md:items-stretch;
+  }
+
+  .architecture-card {
+    @apply flex min-h-40 w-full flex-col gap-5 rounded-md border border-white/[0.08] bg-slate-950/60 p-5;
+  }
+
+  .architecture-arrow {
+    @apply mx-auto rotate-90 text-cyan-300/70 md:absolute md:-right-5 md:top-1/2 md:z-10 md:mx-0 md:-translate-y-1/2 md:rotate-0;
   }
 
 }
