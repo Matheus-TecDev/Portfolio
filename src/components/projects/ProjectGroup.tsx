@@ -19,7 +19,7 @@ export function ProjectGroup({ title, description, projects, variant = "standard
   return (
     <div className="project-group">
       {title ? (
-        <div className="mx-auto mb-5 max-w-7xl">
+        <div className="mx-auto mb-4 max-w-7xl">
           <h3 className="text-xl font-semibold text-white">{title}</h3>
           {description ? <p className="mt-2 max-w-3xl text-sm leading-6 text-slate-400">{description}</p> : null}
         </div>

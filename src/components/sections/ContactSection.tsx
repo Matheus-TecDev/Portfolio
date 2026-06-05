@@ -5,7 +5,7 @@ import { Footer } from "../layout/Footer";
 
 export function ContactSection() {
   return (
-    <section id="contato" className="section pb-12">
+    <section id="contato" className="section pb-10">
       <motion.div
         className="mx-auto max-w-5xl overflow-hidden rounded-lg border border-cyan-400/15 bg-gradient-to-br from-slate-950 via-graphite-900 to-slate-950 p-8 shadow-blue-soft md:p-12"
         initial="hidden"

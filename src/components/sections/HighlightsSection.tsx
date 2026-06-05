@@ -4,7 +4,7 @@ import { heroHighlights } from "../../data/highlights";
 
 export function HighlightsSection() {
   return (
-    <section className="section pt-8 md:pt-12">
+    <section className="section pt-6 md:pt-8">
       <div className="mx-auto grid max-w-7xl gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {heroHighlights.map((item, index) => {
           const Icon = item.icon;

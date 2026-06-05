@@ -12,7 +12,7 @@ export function ProjectsSection() {
         title="O que estou construindo"
         description="Sistemas corporativos, APIs, integrações, dados e deploys."
       />
-      <div className="space-y-8">
+      <div className="space-y-6">
         <ProjectGroup
           projects={featuredProjects}
           variant="featured"

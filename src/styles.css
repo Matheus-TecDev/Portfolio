@@ -75,7 +75,7 @@ body::after {
 
 @layer components {
   .section {
-    @apply relative z-10 px-5 py-14 md:px-8 md:py-20;
+    @apply relative z-10 px-5 py-11 md:px-8 md:py-16;
   }
 
   .section-eyebrow {

@@ -10,7 +10,7 @@ type SectionTitleProps = {
 export function SectionTitle({ eyebrow, title, description }: SectionTitleProps) {
   return (
     <motion.div
-      className="mx-auto mb-8 max-w-3xl text-center"
+      className="mx-auto mb-6 max-w-3xl text-center"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.35 }}
