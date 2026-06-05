@@ -1,4 +1,4 @@
-import { Activity, AppWindow, Code2, Database, Network, ServerCog } from "lucide-react";
+import { Activity, AppWindow, Code2, Database, ServerCog } from "lucide-react";
 import type { SkillGroup } from "../types/content";
 
 export const skillGroups: SkillGroup[] = [
@@ -8,11 +8,6 @@ export const skillGroups: SkillGroup[] = [
     items: ["Python", "FastAPI", "APIs REST", "JWT"],
   },
   {
-    title: "Frontend",
-    icon: AppWindow,
-    items: ["React", "Vite", "TypeScript", "JavaScript"],
-  },
-  {
     title: "Infra/DevOps",
     icon: ServerCog,
     items: ["Linux", "Docker", "Docker Compose", "Nginx", "Deploy"],
@@ -20,12 +15,12 @@ export const skillGroups: SkillGroup[] = [
   {
     title: "Banco de Dados",
     icon: Database,
-    items: ["MySQL", "Firebird", "SQL"],
+    items: ["SQL", "MySQL", "Firebird"],
   },
   {
-    title: "Redes/Suporte",
-    icon: Network,
-    items: ["VPN", "Active Directory", "Redes", "Suporte corporativo"],
+    title: "Frontend",
+    icon: AppWindow,
+    items: ["React", "Vite", "JavaScript", "TypeScript"],
   },
   {
     title: "Em evolução",

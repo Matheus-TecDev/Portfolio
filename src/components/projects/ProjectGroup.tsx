@@ -11,7 +11,7 @@ type ProjectGroupProps = {
 export function ProjectGroup({ title, description, projects, variant = "standard" }: ProjectGroupProps) {
   const gridClass =
     variant === "featured"
-      ? "mx-auto grid max-w-7xl gap-4 lg:grid-cols-2"
+      ? "mx-auto grid max-w-7xl gap-4 md:grid-cols-2 xl:grid-cols-3"
       : variant === "compact"
         ? "mx-auto grid max-w-7xl gap-3 md:grid-cols-2 xl:grid-cols-4"
         : "mx-auto grid max-w-7xl gap-4 md:grid-cols-2 xl:grid-cols-3";

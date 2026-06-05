@@ -15,7 +15,7 @@ export function HeroSection() {
 
       <div
         id="top"
-        className="relative z-10 mx-auto grid min-h-[calc(100vh-84px)] w-full max-w-7xl items-center gap-14 px-5 pb-20 pt-12 md:grid-cols-[1.05fr_0.95fr] md:px-8"
+        className="relative z-10 mx-auto grid min-h-[calc(100vh-84px)] w-full max-w-7xl items-center gap-12 px-5 pb-14 pt-10 md:grid-cols-[1.05fr_0.95fr] md:px-8"
       >
         <motion.div initial="hidden" animate="visible" variants={fadeUp} transition={{ duration: 0.65 }}>
           <div className="status-pill">
@@ -26,11 +26,11 @@ export function HeroSection() {
             {profile.name}
           </h1>
           <p className="mt-5 font-mono text-sm uppercase text-cyan-200 md:text-base">{profile.role}</p>
-          <div className="mt-7 max-w-2xl space-y-4 text-lg leading-8 text-slate-300">
+          <div className="mt-6 max-w-2xl space-y-3 text-lg leading-8 text-slate-300">
             <p>{profile.summary}</p>
             <p className="text-slate-400">{profile.evolution}</p>
           </div>
-          <div className="mt-9 flex flex-wrap gap-3">
+          <div className="mt-7 flex flex-wrap gap-3">
             {links.map((link, index) => {
               const Icon = link.icon;
               return (

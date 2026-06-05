@@ -10,7 +10,7 @@ import { SkillsSection } from "./components/sections/SkillsSection";
 
 export default function App() {
   return (
-    <main className="min-h-screen bg-graphite-950 text-slate-200">
+    <main className="app-shell min-h-screen bg-graphite-950 text-slate-200">
       <HeroSection />
       <HighlightsSection />
       <AboutSection />

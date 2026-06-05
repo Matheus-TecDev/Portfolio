@@ -3,11 +3,11 @@ import type { LinkItem } from "../types/content";
 
 export const profile = {
   name: "Matheus Freire",
-  role: "Desenvolvimento • Infraestrutura • Suporte • Dados • Deploy",
+  role: "Backend • Infraestrutura • Deploys • Dados",
   summary:
-    "Atuo em TI corporativa conectando desenvolvimento de sistemas internos, infraestrutura, suporte, redes, banco de dados e deploys em ambientes reais de operação.",
+    "Backend, infraestrutura e deploys em ambiente corporativo.",
   evolution:
-    "Meu foco de evolução está em Backend, Arquitetura, Linux, Docker, Cloud AWS, Bancos de Dados, Segurança, Observabilidade e DevOps.",
+    "APIs, bancos de dados, Linux, Docker e sistemas internos. Evoluindo para arquitetura, cloud, segurança e observabilidade.",
   photo: "/profile-matheus-placeholder.png",
 };
 

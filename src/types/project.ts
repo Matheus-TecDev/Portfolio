@@ -12,6 +12,7 @@ export type Project = {
   type?: string;
   description: string;
   stack: string[];
+  context?: string;
   problem?: string;
   impact?: string;
   status: string;
