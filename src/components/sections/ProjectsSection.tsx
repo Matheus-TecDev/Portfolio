@@ -1,4 +1,4 @@
-import { projects } from "../../data/projects";
+import { featuredProjects, relevantProjects } from "../../data/projects";
 import { SectionTitle } from "../layout/SectionTitle";
 import { ProjectGroup } from "../projects/ProjectGroup";
 
@@ -10,7 +10,19 @@ export function ProjectsSection() {
         title="Trabalhos com foco operacional, dados, backend e deploy"
         description="Projetos orientados a resolver problemas práticos de negócio, suporte, automação, dados e infraestrutura."
       />
-      <ProjectGroup projects={projects} variant="featured" />
+      <div className="space-y-14">
+        <ProjectGroup
+          title="Projetos em destaque"
+          description="Sistemas corporativos, integrações, deploys e aplicações com maior aderência a backend, infraestrutura, dados e operação."
+          projects={featuredProjects}
+          variant="featured"
+        />
+        <ProjectGroup
+          title="Outros projetos relevantes"
+          description="Aplicações comerciais e projetos com frontend/backend separados, consumo de API, organização de dados e construção de interfaces."
+          projects={relevantProjects}
+        />
+      </div>
     </section>
   );
 }
