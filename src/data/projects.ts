@@ -2,10 +2,13 @@ import {
   AppWindow,
   BookOpen,
   Boxes,
+  BrainCircuit,
+  Braces,
   Car,
   Code2,
   Container,
   Database,
+  GraduationCap,
   Globe,
   HeartPulse,
   LockKeyhole,
@@ -268,6 +271,61 @@ export const relevantProjects: Project[] = [
       { label: "Calculadora", href: "https://github.com/Matheus-TecDev/AndroidStudio-Calculadora" },
     ],
     icon: Code2,
+  },
+];
+
+export const studyProjects: Project[] = [
+  {
+    title: "Projetos Acadêmicos Estácio",
+    type: "Acadêmico / Estudo",
+    status: "Estudo",
+    category: "study",
+    stack: ["CRUD", "Formulários", "Dados", "Interface web", "Páginas"],
+    description:
+      "Projetos acadêmicos voltados a CRUD de alunos e site de imóveis, demonstrando fundamentos de cadastro, organização de dados, estruturação de páginas e lógica de aplicação.",
+    links: [
+      { label: "CRUD Alunos", href: "https://github.com/Matheus-TecDev/Projeto-Estacio-CrudAlunos" },
+      { label: "Site Imóveis", href: "https://github.com/Matheus-TecDev/Projeto-Estacio-SiteImoveis" },
+    ],
+    icon: GraduationCap,
+  },
+  {
+    title: "Projetos Digital College / JavaScript",
+    type: "Estudo / Frontend",
+    status: "Estudo",
+    category: "study",
+    stack: ["JavaScript", "HTML", "CSS", "DOM", "Eventos", "Lógica"],
+    description:
+      "Projetos práticos em JavaScript envolvendo calculadora, jogo de palavras, quiz e gerador de paletas, com foco em lógica, manipulação de DOM, eventos e construção de interfaces simples.",
+    links: [
+      { label: "Calculadora", href: "https://github.com/Matheus-TecDev/Projeto-DC-Calculadora" },
+      { label: "Letreco", href: "https://github.com/Matheus-TecDev/Projeto-DC-Letreco" },
+      { label: "Quiz", href: "https://github.com/Matheus-TecDev/Site-Quiz-JS" },
+      { label: "Paletas", href: "https://github.com/Matheus-TecDev/Gera-Paletas-Js" },
+    ],
+    icon: Braces,
+  },
+  {
+    title: "Exercism",
+    type: "Prática / Algoritmos",
+    status: "Estudo contínuo",
+    category: "study",
+    stack: ["Lógica de programação", "Algoritmos", "Exercícios", "Fundamentos"],
+    description:
+      "Repositório de exercícios de programação usado para prática de lógica, resolução de problemas e evolução em fundamentos de desenvolvimento.",
+    links: [{ label: "Repositório", href: "https://github.com/Matheus-TecDev/Exercism" }],
+    icon: BrainCircuit,
+  },
+  {
+    title: "Site Convite Aniversário",
+    type: "Frontend / Landing Page",
+    status: "Estudo",
+    category: "study",
+    stack: ["Frontend", "Landing page", "Layout", "Responsividade", "Apresentação"],
+    description:
+      "Landing page simples para convite de aniversário, com foco em estrutura visual, responsividade e apresentação de informações.",
+    links: [{ label: "Repositório", href: "https://github.com/Matheus-TecDev/Site-ConviteAniversario" }],
+    icon: AppWindow,
   },
 ];
 
