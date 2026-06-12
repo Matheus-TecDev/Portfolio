@@ -1,12 +1,23 @@
 import { motion } from "framer-motion";
 import { fadeUp } from "../../animations";
-import { skillGroups } from "../../data/skills";
+import { getSkillGroups } from "../../data/skills";
+import type { Translation } from "../../i18n";
 import { SectionTitle } from "../layout/SectionTitle";
 
-export function SkillsSection() {
+type SkillsSectionProps = {
+  t: Translation;
+};
+
+export function SkillsSection({ t }: SkillsSectionProps) {
+  const skillGroups = getSkillGroups(t.skills);
+
   return (
     <section id="competencias" className="section">
-      <SectionTitle eyebrow="Competências" title="Competências principais" />
+      <SectionTitle
+        eyebrow={t.skills.eyebrow}
+        title={t.skills.title}
+        description={t.skills.description}
+      />
       <div className="mx-auto grid max-w-7xl gap-3 sm:grid-cols-2 lg:grid-cols-5">
         {skillGroups.map((group, index) => {
           const Icon = group.icon;

@@ -1,30 +1,13 @@
 import { Activity, AppWindow, Code2, Database, ServerCog } from "lucide-react";
 import type { SkillGroup } from "../types/content";
+import type { Translation } from "../i18n";
 
-export const skillGroups: SkillGroup[] = [
-  {
-    title: "Backend",
-    icon: Code2,
-    items: ["Python", "FastAPI", "APIs REST", "JWT"],
-  },
-  {
-    title: "Infraestrutura",
-    icon: ServerCog,
-    items: ["Linux", "Docker", "Docker Compose", "Nginx", "Deploy"],
-  },
-  {
-    title: "Banco de Dados",
-    icon: Database,
-    items: ["SQL", "MySQL", "Firebird"],
-  },
-  {
-    title: "Frontend",
-    icon: AppWindow,
-    items: ["React", "Vite", "JavaScript", "TypeScript"],
-  },
-  {
-    title: "Em evolução",
-    icon: Activity,
-    items: ["AWS", "Segurança", "Observabilidade", "CI/CD"],
-  },
-];
+const skillIcons = [Code2, ServerCog, Database, AppWindow, Activity] as const;
+
+export function getSkillGroups(skills: Translation["skills"]): SkillGroup[] {
+  return skills.groups.map((group, index) => ({
+    title: group.title,
+    items: [...group.items],
+    icon: skillIcons[index],
+  }));
+}

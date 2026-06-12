@@ -1,9 +1,19 @@
 import { motion } from "framer-motion";
 import { fadeUp } from "../../animations";
 import { contacts } from "../../data/profile";
+import type { Translation } from "../../i18n";
 import { Footer } from "../layout/Footer";
 
-export function ContactSection() {
+type ContactSectionProps = {
+  t: Translation;
+};
+
+export function ContactSection({ t }: ContactSectionProps) {
+  const contactLinks = contacts.map((contact) => ({
+    ...contact,
+    label: t.contact.links[contact.id],
+  }));
+
   return (
     <section id="contato" className="section pb-8">
       <motion.div
@@ -14,16 +24,16 @@ export function ContactSection() {
         variants={fadeUp}
         transition={{ duration: 0.5 }}
       >
-        <span className="section-eyebrow">Contato</span>
+        <span className="section-eyebrow">{t.contact.eyebrow}</span>
         <div className="mt-4 grid gap-6 md:grid-cols-[1.1fr_0.9fr] md:items-end">
           <div>
-            <h2 className="text-2xl font-semibold text-white md:text-3xl">Contato direto</h2>
+            <h2 className="text-2xl font-semibold text-white md:text-3xl">{t.contact.title}</h2>
             <p className="mt-3 text-sm leading-6 text-slate-400 md:text-base">
-              Backend, infraestrutura, bancos de dados e deploys em ambiente corporativo.
+              {t.contact.description}
             </p>
           </div>
           <div className="flex flex-wrap gap-3 md:justify-end">
-            {contacts.map((contact) => {
+            {contactLinks.map((contact) => {
               const Icon = contact.icon;
               const isExternal = contact.href.startsWith("http");
               return (
@@ -42,7 +52,7 @@ export function ContactSection() {
           </div>
         </div>
       </motion.div>
-      <Footer />
+      <Footer t={t} />
     </section>
   );
 }

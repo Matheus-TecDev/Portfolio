@@ -1,25 +1,36 @@
 import { ExternalLink } from "lucide-react";
-import { featuredProjects } from "../../data/projects";
+import { getFeaturedProjects } from "../../data/projects";
+import type { Translation } from "../../i18n";
 import { SectionTitle } from "../layout/SectionTitle";
 import { ProjectCard } from "../projects/ProjectCard";
 
 const repositoriesUrl = "https://github.com/Matheus-TecDev?tab=repositories";
 
-export function ProjectsSection() {
+type ProjectsSectionProps = {
+  t: Translation;
+};
+
+export function ProjectsSection({ t }: ProjectsSectionProps) {
+  const featuredProjects = getFeaturedProjects(t.projects);
+
   return (
     <section id="projetos" className="section">
       <SectionTitle
-        eyebrow="Projetos"
-        title="Projetos"
-        description="Projeto principal em destaque no momento."
+        eyebrow={t.projects.eyebrow}
+        title={t.projects.title}
+        description={t.projects.description}
       />
-      <div className="mx-auto max-w-3xl space-y-5">
-        <ProjectCard project={featuredProjects[0]} index={0} variant="featured" />
+      <div className="mx-auto max-w-6xl space-y-5">
+        <div className="grid items-stretch gap-5 lg:grid-cols-2">
+          {featuredProjects.map((project, index) => (
+            <ProjectCard key={project.title} project={project} index={index} variant="featured" />
+          ))}
+        </div>
         <div className="flex flex-col items-start gap-3 border-t border-white/[0.08] pt-4 sm:flex-row sm:items-center sm:justify-between">
-          <p className="text-sm font-medium text-slate-400">Ver todos os projetos no GitHub →</p>
+          <p className="text-sm font-medium text-slate-400">{t.projects.allProjectsText}</p>
           <a href={repositoriesUrl} className="btn-secondary" target="_blank" rel="noreferrer">
             <ExternalLink size={18} />
-            Ver repositórios
+            {t.projects.repositoriesButton}
           </a>
         </div>
       </div>

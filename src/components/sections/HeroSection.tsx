@@ -2,16 +2,28 @@ import { motion } from "framer-motion";
 import { Cpu } from "lucide-react";
 import { fadeUp } from "../../animations";
 import { links, profile } from "../../data/profile";
+import type { Language, Translation } from "../../i18n";
 import { Header } from "../layout/Header";
 
-export function HeroSection() {
+type HeroSectionProps = {
+  t: Translation;
+  language: Language;
+  onLanguageChange: (language: Language) => void;
+};
+
+export function HeroSection({ t, language, onLanguageChange }: HeroSectionProps) {
+  const heroLinks = links.map((link) => ({
+    ...link,
+    label: t.hero.links[link.id],
+  }));
+
   return (
     <section className="relative min-h-[82vh] overflow-hidden pt-5">
       <div className="hero-grid" />
       <div className="glow glow-blue" />
       <div className="glow glow-violet" />
 
-      <Header />
+      <Header t={t} language={language} onLanguageChange={onLanguageChange} />
 
       <div
         id="top"
@@ -20,15 +32,15 @@ export function HeroSection() {
         <motion.div initial="hidden" animate="visible" variants={fadeUp} transition={{ duration: 0.65 }}>
           <div className="status-pill">
             <span className="status-dot" />
-            TI corporativa • Backend • Infra
+            {t.hero.status}
           </div>
           <h1 className="mt-6 max-w-3xl text-5xl font-semibold leading-[0.98] text-white md:text-7xl">
-            {profile.name}
+            {t.hero.name}
           </h1>
-          <p className="mt-5 font-mono text-sm uppercase text-cyan-200 md:text-base">{profile.role}</p>
-          <p className="mt-5 max-w-2xl text-lg leading-8 text-slate-300">{profile.summary}</p>
+          <p className="mt-5 font-mono text-sm uppercase text-cyan-200 md:text-base">{t.hero.role}</p>
+          <p className="mt-5 max-w-2xl text-lg leading-8 text-slate-300">{t.hero.summary}</p>
           <div className="mt-7 flex flex-wrap gap-3">
-            {links.map((link, index) => {
+            {heroLinks.map((link, index) => {
               const Icon = link.icon;
               const isExternal = link.href.startsWith("http");
               return (
@@ -55,13 +67,13 @@ export function HeroSection() {
           transition={{ duration: 0.7, delay: 0.15 }}
         >
           <div className="profile-shell">
-            <img src={profile.photo} alt="Retrato profissional de Matheus Freire" className="profile-photo" />
+            <img src={profile.photo} alt={t.hero.photoAlt} className="profile-photo" />
             <div className="profile-terminal">
               <div className="flex items-center gap-2 text-cyan-200">
                 <Cpu size={16} />
-                production-context
+                {t.hero.terminalTitle}
               </div>
-              <span>react • fastapi • jwt • sql • linux • docker</span>
+              <span>{t.hero.terminalStack}</span>
             </div>
           </div>
         </motion.div>

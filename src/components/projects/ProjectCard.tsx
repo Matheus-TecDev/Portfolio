@@ -13,12 +13,12 @@ type ProjectCardProps = {
 export function ProjectCard({ project, index, variant = "standard" }: ProjectCardProps) {
   const Icon = project.icon;
   const isCompact = variant === "compact";
-  const visibleTags = project.stack.slice(0, 6);
+  const visibleTags = project.stack;
   const hasDetails = Boolean(project.context || project.technicalPoints?.length || project.impact);
 
   return (
     <motion.article
-      className={`project-card ${isCompact ? "project-card-compact" : ""}`}
+      className={`project-card flex h-full flex-col ${isCompact ? "project-card-compact" : ""}`}
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.25 }}
@@ -41,7 +41,7 @@ export function ProjectCard({ project, index, variant = "standard" }: ProjectCar
           <ProjectTag key={tag}>{tag}</ProjectTag>
         ))}
       </div>
-      <div className="mt-4 flex flex-wrap gap-2">
+      <div className="mt-auto flex flex-wrap gap-2 pt-4">
         {project.links?.map((link) => (
           <a key={link.href} href={link.href} className="project-link" target="_blank" rel="noreferrer">
             <ExternalLink size={14} />

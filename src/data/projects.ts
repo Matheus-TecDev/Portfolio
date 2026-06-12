@@ -1,18 +1,33 @@
-import { Headset } from "lucide-react";
+import { Headset, Radar } from "lucide-react";
+import type { Translation } from "../i18n";
 import type { Project } from "../types/project";
 
-export const featuredProjects: Project[] = [
+const featuredProjectMeta = [
   {
-    title: "Central de Chamados",
-    type: "Full Stack / Sistema de Chamados",
-    status: "Em evolução",
+    key: "centralChamados",
     category: "featured",
-    stack: ["React", "FastAPI", "PostgreSQL", "Alembic", "Docker Compose", "Nginx"],
-    description:
-      "Sistema próprio para abertura, acompanhamento e gestão de chamados, estruturado com frontend, backend, banco PostgreSQL e preparação para deploy em VPS Linux.",
     links: [{ label: "GitHub", href: "https://github.com/Matheus-TecDev/central-chamados" }],
     icon: Headset,
   },
-];
+  {
+    key: "sentinel",
+    category: "featured",
+    links: [{ label: "GitHub", href: "https://github.com/Matheus-TecDev/sentinel" }],
+    icon: Radar,
+  },
+] as const;
 
-export const projects = featuredProjects;
+export function getFeaturedProjects(projects: Translation["projects"]): Project[] {
+  const projectCards = projects.cards;
+
+  return featuredProjectMeta.map((project) => ({
+    title: projectCards[project.key].title,
+    type: projectCards[project.key].type,
+    status: projectCards[project.key].status,
+    stack: [...projectCards[project.key].stack],
+    description: projectCards[project.key].description,
+    category: project.category,
+    links: project.links.map((link) => ({ ...link, label: projects.links.github })),
+    icon: project.icon,
+  }));
+}
