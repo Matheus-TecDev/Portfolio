@@ -13,7 +13,7 @@ export function CertificationSection({ t }: CertificationSectionProps) {
     <section id="certificacao" className="section">
       <SectionTitle eyebrow={t.certification.eyebrow} title={t.certification.title} description={t.certification.description} />
       <motion.article
-        className="panel mx-auto flex max-w-4xl flex-col gap-5 p-5 sm:flex-row sm:items-center sm:justify-between md:p-6"
+        className="aws-certification mx-auto flex max-w-5xl flex-col gap-5 rounded-lg border p-5 sm:flex-row sm:items-center sm:justify-between md:p-7"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.35 }}
@@ -21,13 +21,13 @@ export function CertificationSection({ t }: CertificationSectionProps) {
         transition={{ duration: 0.5 }}
       >
         <div className="flex items-start gap-4">
-          <div className="icon-box shrink-0"><Award size={20} /></div>
+          <div className="aws-icon grid size-11 shrink-0 place-items-center rounded-md"><Award size={20} /></div>
           <div>
             <h3 className="text-lg font-semibold text-white">AWS Certified Cloud Practitioner</h3>
             <p className="mt-2 text-sm text-slate-400">{t.certification.issued} · {t.certification.validUntil}</p>
           </div>
         </div>
-        <a href={credentialUrl} className="btn-secondary shrink-0" target="_blank" rel="noreferrer">
+        <a href={credentialUrl} className="aws-link btn-secondary shrink-0" target="_blank" rel="noreferrer">
           <ExternalLink size={17} />
           {t.certification.verify}
         </a>

@@ -18,13 +18,13 @@ export function SkillsSection({ t }: SkillsSectionProps) {
         title={t.skills.title}
         description={t.skills.description}
       />
-      <div className="mx-auto grid max-w-7xl gap-3 sm:grid-cols-2 lg:grid-cols-5">
+      <div className="mx-auto grid max-w-6xl gap-4 sm:grid-cols-2 lg:grid-cols-6">
         {skillGroups.map((group, index) => {
           const Icon = group.icon;
           return (
             <motion.article
               key={group.title}
-              className="skill-card"
+              className={`skill-card ${index < 4 ? "lg:col-span-3" : "sm:col-span-2 lg:col-span-6"}`}
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, amount: 0.2 }}

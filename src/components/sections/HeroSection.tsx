@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Cpu } from "lucide-react";
+import { CheckCircle2 } from "lucide-react";
 import { fadeUp } from "../../animations";
 import { links, profile } from "../../data/profile";
 import type { Language, Translation } from "../../i18n";
@@ -18,23 +18,21 @@ export function HeroSection({ t, language, onLanguageChange }: HeroSectionProps)
   }));
 
   return (
-    <section className="relative min-h-[82vh] overflow-hidden pt-5">
+    <section className="relative min-h-[86vh] overflow-hidden pt-2">
       <div className="hero-grid" />
-      <div className="glow glow-blue" />
-      <div className="glow glow-violet" />
 
       <Header t={t} language={language} onLanguageChange={onLanguageChange} />
 
       <div
         id="top"
-        className="relative z-10 mx-auto grid min-h-[calc(82vh-76px)] w-full max-w-7xl items-center gap-9 px-5 pb-10 pt-8 md:grid-cols-[1.08fr_0.92fr] md:px-8"
+        className="relative z-10 mx-auto grid min-h-[calc(86vh-72px)] w-full max-w-7xl items-center gap-12 px-5 pb-16 pt-10 md:px-8 lg:grid-cols-[1.12fr_0.88fr]"
       >
         <motion.div initial="hidden" animate="visible" variants={fadeUp} transition={{ duration: 0.65 }}>
           <div className="status-pill">
             <span className="status-dot" />
             {t.hero.status}
           </div>
-          <h1 className="mt-6 max-w-3xl text-5xl font-semibold leading-[0.98] text-white md:text-7xl">
+          <h1 className="mt-7 max-w-3xl text-5xl font-semibold leading-[0.98] tracking-[-0.035em] text-white md:text-7xl">
             {t.hero.name}
           </h1>
           <p className="mt-5 font-mono text-sm uppercase text-cyan-200 md:text-base">{t.hero.role}</p>
@@ -68,12 +66,13 @@ export function HeroSection({ t, language, onLanguageChange }: HeroSectionProps)
         >
           <div className="profile-shell">
             <img src={profile.photo} alt={t.hero.photoAlt} className="profile-photo" />
-            <div className="profile-terminal">
-              <div className="flex items-center gap-2 text-cyan-200">
-                <Cpu size={16} />
-                {t.hero.terminalTitle}
-              </div>
-              <span>{t.hero.terminalStack}</span>
+            <div className="professional-evidence" aria-label={t.hero.evidenceLabel}>
+              {t.hero.evidence.map((item) => (
+                <div key={item} className="flex items-start gap-2">
+                  <CheckCircle2 size={15} className="mt-0.5 shrink-0 text-cyan-300" />
+                  <span>{item}</span>
+                </div>
+              ))}
             </div>
           </div>
         </motion.div>

@@ -27,8 +27,8 @@ export default function App() {
   return (
     <main className="app-shell min-h-screen text-slate-200">
       <HeroSection t={t} language={language} onLanguageChange={setLanguage} />
-      <AboutSection t={t} />
       <CertificationSection t={t} />
+      <AboutSection t={t} />
       <SkillsSection t={t} />
       <ProjectsSection t={t} />
       <ContactSection t={t} />

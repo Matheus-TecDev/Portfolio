@@ -6,13 +6,15 @@ export const languageStorageKey = "portfolio-language";
 export const translations = {
   "pt-BR": {
     languageToggle: { label: "Idioma", options: { "pt-BR": "Português do Brasil", en: "English" } },
-    nav: { about: "Sobre", certification: "Certificação", skills: "Competências", projects: "Projetos", contact: "Contato" },
+    nav: { label: "Navegação principal", mobileLabel: "Navegação mobile", openMenu: "Abrir menu", closeMenu: "Fechar menu", about: "Sobre", certification: "Certificação", skills: "Competências", projects: "Projetos", contact: "Contato" },
     hero: {
       status: "Backend Engineer",
       name: "Matheus Freire",
       role: "Backend com AWS, infraestrutura e observabilidade",
       summary: "Desenvolvo aplicações internas, APIs e automações, com atuação também em deploys, bancos de dados e infraestrutura corporativa.",
       photoAlt: "Retrato profissional de Matheus Freire",
+      evidenceLabel: "Evidências profissionais",
+      evidence: ["Aplicações internas, APIs e automações", "Linux, Docker, bancos de dados e deploys", "AWS Certified Cloud Practitioner"],
       terminalTitle: "backend • infraestrutura • observabilidade",
       terminalStack: "python • fastapi • postgresql • docker • linux",
       links: { github: "GitHub", linkedin: "LinkedIn", resume: "Currículo", contact: "Contato" },
@@ -77,12 +79,14 @@ export const translations = {
   },
   en: {
     languageToggle: { label: "Language", options: { "pt-BR": "Brazilian Portuguese", en: "English" } },
-    nav: { about: "About", certification: "Certification", skills: "Skills", projects: "Projects", contact: "Contact" },
+    nav: { label: "Main navigation", mobileLabel: "Mobile navigation", openMenu: "Open menu", closeMenu: "Close menu", about: "About", certification: "Certification", skills: "Skills", projects: "Projects", contact: "Contact" },
     hero: {
       status: "Backend Engineer", name: "Matheus Freire",
       role: "Backend with AWS, infrastructure and observability",
       summary: "I build internal applications, APIs and automations, while also working with deployments, databases and corporate infrastructure.",
       photoAlt: "Professional portrait of Matheus Freire",
+      evidenceLabel: "Professional evidence",
+      evidence: ["Internal applications, APIs and automations", "Linux, Docker, databases and deployments", "AWS Certified Cloud Practitioner"],
       terminalTitle: "backend • infrastructure • observability",
       terminalStack: "python • fastapi • postgresql • docker • linux",
       links: { github: "GitHub", linkedin: "LinkedIn", resume: "Resume", contact: "Contact" },
