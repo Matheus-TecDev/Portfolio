@@ -5,35 +5,42 @@ import type { Project } from "../types/project";
 const featuredProjectMeta = [
   {
     key: "relay",
-    category: "featured",
-    links: [{ label: "GitHub", href: "https://github.com/Matheus-TecDev/Relay" }],
+    github: "https://github.com/Matheus-TecDev/Relay",
+    documentation: "https://github.com/Matheus-TecDev/Relay/blob/main/docs/architecture.md",
+    image: "/projects/relay-dashboard.png",
     icon: GitBranch,
   },
   {
     key: "sentinel",
-    category: "featured",
-    links: [{ label: "GitHub", href: "https://github.com/Matheus-TecDev/Sentinel" }],
+    github: "https://github.com/Matheus-TecDev/Sentinel",
+    documentation: "https://github.com/Matheus-TecDev/Sentinel/blob/main/docs/monitoring-rules.md",
     icon: Radar,
   },
   {
     key: "ticketOps",
-    category: "featured",
-    links: [{ label: "GitHub", href: "https://github.com/Matheus-TecDev/TicketOps" }],
+    github: "https://github.com/Matheus-TecDev/TicketOps",
+    documentation: "https://github.com/Matheus-TecDev/TicketOps/blob/main/docs/ticket-workflow.md",
     icon: TicketCheck,
   },
 ] as const;
 
 export function getFeaturedProjects(projects: Translation["projects"]): Project[] {
-  const projectCards = projects.cards;
+  return featuredProjectMeta.map((meta) => {
+    const content = projects.cards[meta.key];
 
-  return featuredProjectMeta.map((project) => ({
-    title: projectCards[project.key].title,
-    type: projectCards[project.key].type,
-    stack: [...projectCards[project.key].stack],
-    description: projectCards[project.key].description,
-    category: project.category,
-    links: project.links.map((link) => ({ ...link, label: projects.links.github })),
-    icon: project.icon,
-    details: projects.details,
-  }));
+    return {
+      title: content.title,
+      type: content.type,
+      problem: content.problem,
+      technicalHighlights: [...content.technicalHighlights],
+      stack: [...content.stack],
+      status: content.status,
+      links: [
+        { label: projects.links.github, href: meta.github },
+        { label: projects.links.documentation, href: meta.documentation },
+      ],
+      image: "image" in meta ? { src: meta.image, alt: content.imageAlt } : undefined,
+      icon: meta.icon,
+    };
+  });
 }

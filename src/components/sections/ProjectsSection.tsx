@@ -21,9 +21,10 @@ export function ProjectsSection({ t }: ProjectsSectionProps) {
         description={t.projects.description}
       />
       <div className="mx-auto max-w-6xl space-y-5">
-        <div className="grid items-stretch gap-5 md:grid-cols-2 xl:grid-cols-3">
-          {featuredProjects.map((project, index) => (
-            <ProjectCard key={project.title} project={project} index={index} variant="featured" />
+        <ProjectCard project={featuredProjects[0]} labels={t.projects.labels} index={0} variant="primary" />
+        <div className="grid items-stretch gap-5 lg:grid-cols-2">
+          {featuredProjects.slice(1).map((project, index) => (
+            <ProjectCard key={project.title} project={project} labels={t.projects.labels} index={index + 1} />
           ))}
         </div>
         <div className="flex flex-col items-start gap-3 border-t border-white/[0.08] pt-4 sm:flex-row sm:items-center sm:justify-between">

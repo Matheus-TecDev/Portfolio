@@ -1,7 +1,5 @@
 import type { LucideIcon } from "lucide-react";
 
-export type ProjectCategory = "featured" | "relevant" | "study";
-
 export type ProjectLink = {
   label: string;
   href: string;
@@ -9,21 +7,15 @@ export type ProjectLink = {
 
 export type Project = {
   title: string;
-  type?: string;
-  description: string;
+  type: string;
+  problem: string;
+  technicalHighlights: string[];
   stack: string[];
-  context?: string;
-  problem?: string;
-  impact?: string;
-  status?: string;
-  category?: ProjectCategory;
-  technicalPoints?: string[];
-  details?: {
-    summary: string;
-    context: string;
-    technicalPoints: string;
-    impact: string;
+  status: string;
+  links: ProjectLink[];
+  image?: {
+    src: string;
+    alt: string;
   };
-  links?: ProjectLink[];
   icon: LucideIcon;
 };
