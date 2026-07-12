@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { AboutSection } from "./components/sections/AboutSection";
-import { CertificationSection } from "./components/sections/CertificationSection";
 import { ContactSection } from "./components/sections/ContactSection";
+import { EducationSection } from "./components/sections/EducationSection";
 import { HeroSection } from "./components/sections/HeroSection";
 import { ProjectsSection } from "./components/sections/ProjectsSection";
 import { SkillsSection } from "./components/sections/SkillsSection";
@@ -27,8 +27,8 @@ export default function App() {
   return (
     <main className="app-shell min-h-screen text-slate-200">
       <HeroSection t={t} language={language} onLanguageChange={setLanguage} />
-      <CertificationSection t={t} />
       <AboutSection t={t} />
+      <EducationSection t={t} />
       <SkillsSection t={t} />
       <ProjectsSection t={t} />
       <ContactSection t={t} />

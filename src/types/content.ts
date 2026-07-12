@@ -9,9 +9,3 @@ export type LinkItem<TId extends LinkId = LinkId> = {
   icon: LucideIcon;
   download?: string;
 };
-
-export type SkillGroup = {
-  title: string;
-  icon: LucideIcon;
-  items: string[];
-};

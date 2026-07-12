@@ -1,6 +1,6 @@
 # Matheus Freire — Portfolio
 
-Professional portfolio positioning Matheus Freire as a Backend Engineer with AWS, infrastructure, and observability as complementary strengths.
+Personal portfolio for Matheus Freire, a Backend Developer who works with internal applications, APIs, automations, deployments, and infrastructure.
 
 **Published site:** [matheus-freire-portfolio.vercel.app](https://matheus-freire-portfolio.vercel.app/)
 

@@ -1,5 +1,3 @@
-import type { LucideIcon } from "lucide-react";
-
 export type ProjectLink = {
   label: string;
   href: string;
@@ -8,10 +6,8 @@ export type ProjectLink = {
 export type Project = {
   title: string;
   type: string;
-  problem: string;
-  technicalHighlights: string[];
-  stack: string[];
-  status: string;
+  description: string;
+  highlights: string[];
+  technologies: string[];
   links: ProjectLink[];
-  icon: LucideIcon;
 };

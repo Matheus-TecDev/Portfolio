@@ -11,8 +11,8 @@ type HeaderProps = {
 export function Header({ t, language, onLanguageChange }: HeaderProps) {
   const [menuOpen, setMenuOpen] = useState(false);
   const navItems = [
-    { href: "#certificacao", label: t.nav.certification },
     { href: "#sobre", label: t.nav.about },
+    { href: "#formacao", label: t.nav.education },
     { href: "#competencias", label: t.nav.skills },
     { href: "#projetos", label: t.nav.projects },
     { href: "#contato", label: t.nav.contact },
@@ -48,7 +48,7 @@ export function Header({ t, language, onLanguageChange }: HeaderProps) {
         </div>
       </nav>
       {menuOpen ? (
-        <nav id="mobile-navigation" className="mobile-navigation absolute left-5 right-5 top-full grid gap-1 rounded-lg border border-white/10 bg-graphite-900 p-2 shadow-xl md:left-8 md:right-8 lg:hidden" aria-label={t.nav.mobileLabel}>
+        <nav id="mobile-navigation" className="mobile-navigation absolute left-5 right-5 top-full grid gap-1 rounded-lg border border-slate-300/10 bg-[#081426] p-2 shadow-lg md:left-8 md:right-8 lg:hidden" aria-label={t.nav.mobileLabel}>
           {navItems.map((item) => <a key={item.href} href={item.href} className="nav-link rounded-md px-4 py-3 text-sm text-slate-200" onClick={() => setMenuOpen(false)}>{item.label}</a>)}
         </nav>
       ) : null}
