@@ -11,9 +11,9 @@ export const links: LinkItem<"github" | "linkedin" | "resume" | "contact">[] = [
   {
     id: "resume",
     label: "Currículo",
-    href: "/Curriculo_Matheus_Freire_Moderno.pdf",
+    href: "/Matheus_Freire_Curriculo_PT-BR.pdf",
     icon: FileText,
-    download: "Curriculo_Matheus_Freire_Moderno.pdf",
+    download: "Matheus_Freire_Curriculo_PT-BR.pdf",
   },
   { id: "contact", label: "Contato", href: "#contato", icon: Mail },
 ];
