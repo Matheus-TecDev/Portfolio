@@ -15,9 +15,15 @@ export type Project = {
   context?: string;
   problem?: string;
   impact?: string;
-  status: string;
+  status?: string;
   category?: ProjectCategory;
   technicalPoints?: string[];
+  details?: {
+    summary: string;
+    context: string;
+    technicalPoints: string;
+    impact: string;
+  };
   links?: ProjectLink[];
   icon: LucideIcon;
 };

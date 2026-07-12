@@ -9,12 +9,13 @@ export function AboutSection({ t }: AboutSectionProps) {
   return (
     <section id="sobre" className="section">
       <SectionTitle eyebrow={t.about.eyebrow} title={t.about.title} />
-      <div className="panel mx-auto max-w-4xl p-5 md:p-6">
-        <div className="grid gap-4 text-sm leading-7 text-slate-300 md:grid-cols-2 md:text-base">
-          {t.about.highlights.map((item) => (
-            <p key={item}>{item}</p>
+      <div className="mx-auto grid max-w-6xl gap-4 md:grid-cols-3">
+        {t.about.highlights.map((item) => (
+          <article key={item.title} className="panel p-5 md:p-6">
+            <h3 className="text-base font-semibold text-white">{item.title}</h3>
+            <p className="mt-3 text-sm leading-7 text-slate-300">{item.description}</p>
+          </article>
           ))}
-        </div>
       </div>
     </section>
   );

@@ -21,7 +21,7 @@ export function ProjectsSection({ t }: ProjectsSectionProps) {
         description={t.projects.description}
       />
       <div className="mx-auto max-w-6xl space-y-5">
-        <div className="grid items-stretch gap-5 lg:grid-cols-2">
+        <div className="grid items-stretch gap-5 md:grid-cols-2 xl:grid-cols-3">
           {featuredProjects.map((project, index) => (
             <ProjectCard key={project.title} project={project} index={index} variant="featured" />
           ))}

@@ -1,253 +1,114 @@
 export const languages = ["pt-BR", "en"] as const;
-
 export type Language = (typeof languages)[number];
-
 export const defaultLanguage: Language = "pt-BR";
-
 export const languageStorageKey = "portfolio-language";
 
 export const translations = {
   "pt-BR": {
-    languageToggle: {
-      label: "Idioma",
-      options: {
-        "pt-BR": "Português do Brasil",
-        en: "English",
-      },
-    },
-    nav: {
-      about: "Sobre",
-      skills: "Competências",
-      projects: "Projetos",
-      contact: "Contato",
-    },
+    languageToggle: { label: "Idioma", options: { "pt-BR": "Português do Brasil", en: "English" } },
+    nav: { about: "Sobre", certification: "Certificação", skills: "Competências", projects: "Projetos", contact: "Contato" },
     hero: {
-      status: "Backend, infraestrutura e cloud",
+      status: "Backend Engineer",
       name: "Matheus Freire",
-      role: "Backend • Infraestrutura • Cloud",
-      summary:
-        "Atuo com desenvolvimento backend, infraestrutura, bancos de dados e deploys em ambientes corporativos.",
+      role: "Backend com AWS, infraestrutura e observabilidade",
+      summary: "Desenvolvo aplicações internas, APIs e automações, com atuação também em deploys, bancos de dados e infraestrutura corporativa.",
       photoAlt: "Retrato profissional de Matheus Freire",
-      terminalTitle: "backend • cloud • devops",
-      terminalStack: "fastapi • postgresql • docker • linux • aws • ci/cd",
-      links: {
-        github: "GitHub",
-        linkedin: "LinkedIn",
-        resume: "Currículo",
-        contact: "Contato",
-      },
+      terminalTitle: "backend • infraestrutura • observabilidade",
+      terminalStack: "python • fastapi • postgresql • docker • linux",
+      links: { github: "GitHub", linkedin: "LinkedIn", resume: "Currículo", contact: "Contato" },
     },
     about: {
       eyebrow: "Sobre",
-      title: "Backend, infraestrutura e cloud",
+      title: "Engenharia backend conectada à operação",
       highlights: [
-        "Atuo na equipe de tecnologia da A&Cia Móveis, trabalhando com desenvolvimento de sistemas, infraestrutura, suporte, redes, bancos de dados e deploys.",
-        "Meu foco é evoluir em Backend, Arquitetura, Linux, Docker, Cloud, Segurança, Observabilidade e DevOps.",
+        { title: "Experiência profissional", description: "Atuo em ambiente corporativo com desenvolvimento de aplicações internas, APIs e automações, além de deploys, bancos de dados, Linux, Docker e infraestrutura." },
+        { title: "Projetos próprios", description: "Desenvolvo Relay, Sentinel e TicketOps para aprofundar soluções backend, mensageria, observabilidade e operação de aplicações." },
+        { title: "Direção profissional", description: "Minha direção é engenharia backend. AWS, infraestrutura e observabilidade complementam esse foco e ampliam minha visão sobre entrega e operação de software." },
       ],
     },
+    certification: {
+      eyebrow: "Certificação",
+      title: "Conhecimento em cloud validado",
+      description: "Fundamentos de AWS e cloud comprovados por certificação, sem equivalência com experiência prática avançada na plataforma.",
+      issued: "Emitida em julho de 2026",
+      validUntil: "Válida até julho de 2029",
+      verify: "Verificar na Credly",
+    },
     skills: {
-      eyebrow: "Competências",
-      title: "Stack Tecnológica",
-      description:
-        "Tecnologias utilizadas em desenvolvimento, infraestrutura, bancos de dados, cloud e automação.",
+      eyebrow: "Competências", title: "Stack tecnológica",
+      description: "Tecnologias aplicadas a backend, dados, entrega e operação de aplicações.",
       groups: [
-        {
-          title: "Backend",
-          items: ["Python", "FastAPI", "APIs REST", "JWT"],
-        },
-        {
-          title: "Infraestrutura",
-          items: ["Linux", "Docker", "Docker Compose", "Nginx", "Deploy"],
-        },
-        {
-          title: "Banco de Dados",
-          items: ["SQL", "MySQL", "Firebird"],
-        },
-        {
-          title: "Frontend",
-          items: ["React", "Vite", "JavaScript", "TypeScript"],
-        },
-        {
-          title: "Em evolução",
-          items: ["AWS", "Segurança", "Observabilidade", "CI/CD"],
-        },
+        { title: "Backend", items: ["Python", "FastAPI", "APIs REST", "JWT"] },
+        { title: "Dados", items: ["PostgreSQL", "SQL", "MySQL", "Redis", "Firebird"] },
+        { title: "Infraestrutura e entrega", items: ["Linux", "Docker", "Docker Compose", "Nginx", "GitHub Actions"] },
+        { title: "Mensageria e observabilidade", items: ["RabbitMQ", "Prometheus", "Grafana", "Loki", "OpenTelemetry"] },
+        { title: "Frontend complementar", items: ["React", "TypeScript", "Vite"] },
       ],
     },
     projects: {
-      eyebrow: "Portfólio",
-      title: "Projetos em Destaque",
-      description:
-        "Projetos desenvolvidos com foco em backend, infraestrutura, observabilidade e arquitetura de sistemas.",
-      allProjectsText: "Ver todos os projetos no GitHub →",
-      repositoriesButton: "Ver repositórios",
-      links: {
-        github: "GitHub",
-      },
+      eyebrow: "Portfólio", title: "Projetos em destaque",
+      description: "Projetos públicos que demonstram backend, mensageria, infraestrutura e observabilidade.",
+      allProjectsText: "Conheça os demais projetos no GitHub →", repositoriesButton: "Ver repositórios",
+      links: { github: "GitHub" },
+      details: { summary: "Detalhes", context: "Contexto", technicalPoints: "Pontos técnicos", impact: "Impacto" },
       cards: {
-        centralChamados: {
-          title: "Central de Chamados",
-          type: "Full Stack / Sistema de Chamados",
-          status: "Em evolução",
-          stack: ["React", "FastAPI", "PostgreSQL", "Alembic", "Docker Compose", "Nginx"],
-          description:
-            "Sistema próprio para abertura, acompanhamento e gestão de chamados, estruturado com frontend, backend, banco PostgreSQL e preparação para deploy em VPS Linux.",
-        },
-        sentinel: {
-          title: "Sentinel",
-          type: "Full Stack / Observabilidade",
-          status: "Em evolução",
-          stack: [
-            "React",
-            "TypeScript",
-            "FastAPI",
-            "PostgreSQL",
-            "JWT",
-            "RBAC",
-            "Docker Compose",
-            "Nginx",
-            "Prometheus",
-            "Grafana",
-            "Loki",
-          ],
-          description:
-            "Plataforma de observabilidade para monitoramento de serviços, APIs e aplicações internas, com verificações HTTP automáticas, autenticação JWT, RBAC, métricas, logs e dashboards operacionais com Prometheus, Grafana, Loki e Docker.",
-        },
+        relay: { title: "Relay", type: "Processamento assíncrono de eventos", stack: ["FastAPI", "RabbitMQ", "PostgreSQL", "Redis", "Docker", "OpenTelemetry"], description: "Plataforma para processamento assíncrono de eventos com Outbox transacional, consumidores idempotentes, retentativas, DLQ e observabilidade de métricas, logs e traces." },
+        sentinel: { title: "Sentinel", type: "Monitoramento e observabilidade", stack: ["FastAPI", "PostgreSQL", "React", "Docker", "Prometheus", "Grafana", "Loki"], description: "Plataforma de monitoramento de APIs e serviços internos com verificações HTTP agendadas, histórico de disponibilidade, incidentes, alertas, JWT e RBAC." },
+        ticketOps: { title: "TicketOps", type: "Operações de service desk", stack: ["FastAPI", "PostgreSQL", "React", "Docker", "Prometheus", "GitHub Actions"], description: "Plataforma de service desk interno com fluxo de chamados, atribuição técnica, RBAC, auditoria, anexos, dashboard operacional e testes automatizados." },
       },
     },
-    contact: {
-      eyebrow: "Contato",
-      title: "Contato direto",
-      description: "Backend, infraestrutura, bancos de dados e deploys em ambiente corporativo.",
-      links: {
-        github: "GitHub",
-        linkedin: "LinkedIn",
-        email: "E-mail",
-      },
-    },
-    footer: "© 2026 Matheus Freire. Backend, Infraestrutura e Cloud.",
+    contact: { eyebrow: "Contato", title: "Contato direto", description: "Vamos conversar sobre engenharia backend, infraestrutura e observabilidade.", links: { github: "GitHub", linkedin: "LinkedIn", email: "E-mail" } },
+    footer: "© 2026 Matheus Freire. Backend Engineer.",
   },
   en: {
-    languageToggle: {
-      label: "Language",
-      options: {
-        "pt-BR": "Português do Brasil",
-        en: "English",
-      },
-    },
-    nav: {
-      about: "About",
-      skills: "Skills",
-      projects: "Projects",
-      contact: "Contact",
-    },
+    languageToggle: { label: "Language", options: { "pt-BR": "Brazilian Portuguese", en: "English" } },
+    nav: { about: "About", certification: "Certification", skills: "Skills", projects: "Projects", contact: "Contact" },
     hero: {
-      status: "Backend, infrastructure & cloud",
-      name: "Matheus Freire",
-      role: "Backend • Infrastructure • Cloud",
-      summary:
-        "I work with backend development, infrastructure, databases and deployments in corporate environments.",
+      status: "Backend Engineer", name: "Matheus Freire",
+      role: "Backend with AWS, infrastructure and observability",
+      summary: "I build internal applications, APIs and automations, while also working with deployments, databases and corporate infrastructure.",
       photoAlt: "Professional portrait of Matheus Freire",
-      terminalTitle: "backend • cloud • devops",
-      terminalStack: "fastapi • postgresql • docker • linux • aws • ci/cd",
-      links: {
-        github: "GitHub",
-        linkedin: "LinkedIn",
-        resume: "Resume",
-        contact: "Contact",
-      },
+      terminalTitle: "backend • infrastructure • observability",
+      terminalStack: "python • fastapi • postgresql • docker • linux",
+      links: { github: "GitHub", linkedin: "LinkedIn", resume: "Resume", contact: "Contact" },
     },
     about: {
-      eyebrow: "About",
-      title: "Backend, infrastructure and cloud",
+      eyebrow: "About", title: "Backend engineering connected to operations",
       highlights: [
-        "I work on the technology team at A&Cia Moveis, building systems, infrastructure, support, networks, databases and deployments.",
-        "My focus is growing in Backend, Architecture, Linux, Docker, Cloud, Security, Observability and DevOps.",
+        { title: "Professional experience", description: "I work in a corporate environment building internal applications, APIs and automations, as well as handling deployments, databases, Linux, Docker and infrastructure." },
+        { title: "Personal projects", description: "I build Relay, Sentinel and TicketOps to deepen my work with backend systems, messaging, observability and application operations." },
+        { title: "Professional direction", description: "My direction is backend engineering. AWS, infrastructure and observability complement this focus and broaden how I approach software delivery and operations." },
       ],
     },
+    certification: {
+      eyebrow: "Certification", title: "Validated cloud knowledge",
+      description: "AWS and cloud fundamentals validated by certification, without presenting them as advanced hands-on experience on the platform.",
+      issued: "Issued in July 2026", validUntil: "Valid until July 2029", verify: "Verify on Credly",
+    },
     skills: {
-      eyebrow: "Skills",
-      title: "Technology Stack",
-      description: "Technologies used across development, infrastructure, databases, cloud and automation.",
+      eyebrow: "Skills", title: "Technology stack", description: "Technologies applied to backend development, data, delivery and application operations.",
       groups: [
-        {
-          title: "Backend",
-          items: ["Python", "FastAPI", "REST APIs", "JWT"],
-        },
-        {
-          title: "Infrastructure",
-          items: ["Linux", "Docker", "Docker Compose", "Nginx", "Deploy"],
-        },
-        {
-          title: "Databases",
-          items: ["SQL", "MySQL", "Firebird"],
-        },
-        {
-          title: "Frontend",
-          items: ["React", "Vite", "JavaScript", "TypeScript"],
-        },
-        {
-          title: "Evolving",
-          items: ["AWS", "Security", "Observability", "CI/CD"],
-        },
+        { title: "Backend", items: ["Python", "FastAPI", "REST APIs", "JWT"] },
+        { title: "Data", items: ["PostgreSQL", "SQL", "MySQL", "Redis", "Firebird"] },
+        { title: "Infrastructure and delivery", items: ["Linux", "Docker", "Docker Compose", "Nginx", "GitHub Actions"] },
+        { title: "Messaging and observability", items: ["RabbitMQ", "Prometheus", "Grafana", "Loki", "OpenTelemetry"] },
+        { title: "Complementary frontend", items: ["React", "TypeScript", "Vite"] },
       ],
     },
     projects: {
-      eyebrow: "Portfolio",
-      title: "Featured Projects",
-      description:
-        "Projects built with a focus on backend, infrastructure, observability and systems architecture.",
-      allProjectsText: "See all projects on GitHub →",
-      repositoriesButton: "View repositories",
-      links: {
-        github: "GitHub",
-      },
+      eyebrow: "Portfolio", title: "Featured projects", description: "Public projects demonstrating backend development, messaging, infrastructure and observability.",
+      allProjectsText: "Explore more projects on GitHub →", repositoriesButton: "View repositories", links: { github: "GitHub" },
+      details: { summary: "Details", context: "Context", technicalPoints: "Technical points", impact: "Impact" },
       cards: {
-        centralChamados: {
-          title: "Help Desk Center",
-          type: "Full Stack / Help Desk System",
-          status: "In progress",
-          stack: ["React", "FastAPI", "PostgreSQL", "Alembic", "Docker Compose", "Nginx"],
-          description:
-            "Custom system for opening, tracking and managing support tickets, structured with frontend, backend, PostgreSQL database and preparation for deployment on a Linux VPS.",
-        },
-        sentinel: {
-          title: "Sentinel",
-          type: "Full Stack / Observability",
-          status: "In progress",
-          stack: [
-            "React",
-            "TypeScript",
-            "FastAPI",
-            "PostgreSQL",
-            "JWT",
-            "RBAC",
-            "Docker Compose",
-            "Nginx",
-            "Prometheus",
-            "Grafana",
-            "Loki",
-          ],
-          description:
-            "Observability platform for monitoring services, APIs and internal applications, with automated HTTP checks, JWT authentication, RBAC, metrics, logs and operational dashboards with Prometheus, Grafana, Loki and Docker.",
-        },
+        relay: { title: "Relay", type: "Asynchronous event processing", stack: ["FastAPI", "RabbitMQ", "PostgreSQL", "Redis", "Docker", "OpenTelemetry"], description: "An asynchronous event-processing platform with a transactional outbox, idempotent consumers, retries, a DLQ, and observability across metrics, logs and traces." },
+        sentinel: { title: "Sentinel", type: "Monitoring and observability", stack: ["FastAPI", "PostgreSQL", "React", "Docker", "Prometheus", "Grafana", "Loki"], description: "A monitoring platform for APIs and internal services with scheduled HTTP checks, availability history, incidents, alerts, JWT and RBAC." },
+        ticketOps: { title: "TicketOps", type: "Service desk operations", stack: ["FastAPI", "PostgreSQL", "React", "Docker", "Prometheus", "GitHub Actions"], description: "An internal service desk platform with ticket workflows, technical assignment, RBAC, auditing, attachments, an operational dashboard and automated tests." },
       },
     },
-    contact: {
-      eyebrow: "Contact",
-      title: "Direct contact",
-      description: "Backend, infrastructure, databases and deployments in corporate environments.",
-      links: {
-        github: "GitHub",
-        linkedin: "LinkedIn",
-        email: "E-mail",
-      },
-    },
-    footer: "© 2026 Matheus Freire. Backend, Infrastructure and Cloud.",
+    contact: { eyebrow: "Contact", title: "Direct contact", description: "Let's talk about backend engineering, infrastructure and observability.", links: { github: "GitHub", linkedin: "LinkedIn", email: "Email" } },
+    footer: "© 2026 Matheus Freire. Backend Engineer.",
   },
 } as const;
 
 export type Translation = (typeof translations)[Language];
-
-export function isLanguage(value: string | null): value is Language {
-  return value === "pt-BR" || value === "en";
-}
+export function isLanguage(value: string | null): value is Language { return value === "pt-BR" || value === "en"; }

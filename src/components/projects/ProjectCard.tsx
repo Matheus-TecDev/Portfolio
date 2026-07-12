@@ -29,7 +29,7 @@ export function ProjectCard({ project, index, variant = "standard" }: ProjectCar
         <div className="icon-box">
           <Icon size={19} />
         </div>
-        <span className="status-badge">{project.status}</span>
+        {project.status ? <span className="status-badge">{project.status}</span> : null}
       </div>
       <div className="mt-4">
         {project.type ? <span className="project-type">{project.type}</span> : null}
@@ -50,17 +50,17 @@ export function ProjectCard({ project, index, variant = "standard" }: ProjectCar
         ))}
         {hasDetails ? (
           <details className="project-details">
-            <summary>Detalhes</summary>
+            <summary>{project.details?.summary}</summary>
             <div className="mt-4 space-y-3">
               {project.context ? (
                 <div>
-                  <span className="project-label">Contexto</span>
+                  <span className="project-label">{project.details?.context}</span>
                   <p className="mt-2 text-sm leading-6 text-slate-400">{project.context}</p>
                 </div>
               ) : null}
               {project.technicalPoints?.length ? (
                 <div>
-                  <span className="project-label">Pontos técnicos</span>
+                  <span className="project-label">{project.details?.technicalPoints}</span>
                   <ul className="mt-3 grid gap-2 text-sm leading-6 text-slate-400 sm:grid-cols-2">
                     {project.technicalPoints.map((point) => (
                       <li key={point} className="project-point">{point}</li>
@@ -70,7 +70,7 @@ export function ProjectCard({ project, index, variant = "standard" }: ProjectCar
               ) : null}
               {project.impact ? (
                 <div>
-                  <span className="project-label">Impacto</span>
+                  <span className="project-label">{project.details?.impact}</span>
                   <p className="mt-2 text-sm leading-6 text-slate-400">{project.impact}</p>
                 </div>
               ) : null}

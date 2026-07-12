@@ -19,6 +19,7 @@ export function Header({ t, language, onLanguageChange }: HeaderProps) {
       <div className="flex items-center gap-3 md:gap-6">
         <div className="hidden items-center gap-6 text-sm text-slate-400 md:flex">
           <a href="#sobre" className="nav-link">{t.nav.about}</a>
+          <a href="#certificacao" className="nav-link">{t.nav.certification}</a>
           <a href="#competencias" className="nav-link">{t.nav.skills}</a>
           <a href="#projetos" className="nav-link">{t.nav.projects}</a>
           <a href="#contato" className="nav-link">{t.nav.contact}</a>
