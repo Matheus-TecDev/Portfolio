@@ -23,8 +23,8 @@ export function CertificationSection({ t }: CertificationSectionProps) {
         <div className="flex items-start gap-4">
           <div className="aws-icon grid size-11 shrink-0 place-items-center rounded-md"><Award size={20} /></div>
           <div>
-            <h3 className="text-lg font-semibold text-white">AWS Certified Cloud Practitioner</h3>
-            <p className="mt-2 text-sm text-slate-400">{t.certification.issued} · {t.certification.validUntil}</p>
+            <p className="text-sm font-medium text-slate-200">{t.certification.issued}</p>
+            <p className="mt-1 text-sm text-slate-400">{t.certification.validUntil}</p>
           </div>
         </div>
         <a href={credentialUrl} className="aws-link btn-secondary shrink-0" target="_blank" rel="noreferrer">

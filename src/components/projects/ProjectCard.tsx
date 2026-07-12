@@ -18,21 +18,14 @@ export function ProjectCard({ project, labels, index, variant = "secondary" }: P
 
   return (
     <motion.article
-      className={`project-card overflow-hidden ${isPrimary ? "p-0" : "flex h-full flex-col"}`}
+      className={`project-card flex h-full flex-col ${isPrimary ? "project-card-primary p-6 md:p-8" : ""}`}
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.2 }}
       variants={fadeUp}
       transition={{ duration: 0.45, delay: index * 0.06 }}
     >
-      <div className={isPrimary ? "grid lg:grid-cols-[1.05fr_0.95fr]" : "flex h-full flex-col"}>
-        {project.image ? (
-          <div className="relative min-h-56 overflow-hidden border-b border-white/[0.08] bg-slate-950 lg:min-h-full lg:border-b-0 lg:border-r">
-            <img src={project.image.src} alt={project.image.alt} className="h-full w-full object-cover object-left-top" loading="lazy" />
-            <div className="absolute inset-0 bg-gradient-to-t from-slate-950/55 via-transparent to-transparent" />
-          </div>
-        ) : null}
-        <div className={`flex h-full flex-col ${isPrimary ? "p-5 md:p-7" : ""}`}>
+      <div className="flex h-full flex-col">
           <div className="flex items-start justify-between gap-4">
             <div className="icon-box"><Icon size={19} /></div>
             <span className="status-badge">{project.status}</span>
@@ -41,20 +34,22 @@ export function ProjectCard({ project, labels, index, variant = "secondary" }: P
             <span className="project-type">{project.type}</span>
             <h3 className={`${isPrimary ? "text-2xl" : "text-xl"} mt-2 font-semibold text-white`}>{project.title}</h3>
           </div>
-          <div className="mt-4">
-            <span className="project-label">{labels.problem}</span>
-            <p className="mt-2 text-sm leading-6 text-slate-400">{project.problem}</p>
-          </div>
-          <div className="mt-5">
-            <span className="project-label">{labels.technicalEvidence}</span>
-            <ul className={`mt-3 grid gap-2 text-sm leading-6 text-slate-300 ${isPrimary ? "sm:grid-cols-2" : ""}`}>
+          <div className={isPrimary ? "mt-5 grid gap-6 lg:grid-cols-[0.8fr_1.2fr]" : ""}>
+            <div className={isPrimary ? "" : "mt-4"}>
+              <span className="project-label">{labels.problem}</span>
+              <p className="mt-2 text-sm leading-6 text-slate-300">{project.problem}</p>
+            </div>
+            <div className={isPrimary ? "" : "mt-5"}>
+              <span className="project-label">{labels.technicalEvidence}</span>
+              <ul className={`mt-3 grid gap-2 text-sm leading-6 text-slate-300 ${isPrimary ? "sm:grid-cols-2" : ""}`}>
               {project.technicalHighlights.map((highlight) => (
                 <li key={highlight} className="flex gap-2">
                   <CheckCircle2 size={16} className="mt-1 shrink-0 text-cyan-300" />
                   <span>{highlight}</span>
                 </li>
               ))}
-            </ul>
+              </ul>
+            </div>
           </div>
           <div className="mt-5">
             <span className="project-label">{labels.stack}</span>
@@ -69,7 +64,6 @@ export function ProjectCard({ project, labels, index, variant = "secondary" }: P
               </a>
             ))}
           </div>
-        </div>
       </div>
     </motion.article>
   );

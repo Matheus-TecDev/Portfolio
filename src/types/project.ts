@@ -13,9 +13,5 @@ export type Project = {
   stack: string[];
   status: string;
   links: ProjectLink[];
-  image?: {
-    src: string;
-    alt: string;
-  };
   icon: LucideIcon;
 };

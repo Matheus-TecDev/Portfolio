@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import { CheckCircle2 } from "lucide-react";
 import { fadeUp } from "../../animations";
 import { links, profile } from "../../data/profile";
 import type { Language, Translation } from "../../i18n";
@@ -66,14 +65,6 @@ export function HeroSection({ t, language, onLanguageChange }: HeroSectionProps)
         >
           <div className="profile-shell">
             <img src={profile.photo} alt={t.hero.photoAlt} className="profile-photo" />
-            <div className="professional-evidence" aria-label={t.hero.evidenceLabel}>
-              {t.hero.evidence.map((item) => (
-                <div key={item} className="flex items-start gap-2">
-                  <CheckCircle2 size={15} className="mt-0.5 shrink-0 text-cyan-300" />
-                  <span>{item}</span>
-                </div>
-              ))}
-            </div>
           </div>
         </motion.div>
       </div>

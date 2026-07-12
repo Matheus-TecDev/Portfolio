@@ -17,7 +17,7 @@ export function ContactSection({ t }: ContactSectionProps) {
   return (
     <section id="contato" className="section pb-8">
       <motion.div
-        className="mx-auto max-w-5xl overflow-hidden rounded-lg border border-cyan-400/15 bg-gradient-to-br from-slate-950 via-graphite-900 to-slate-950 p-6 shadow-blue-soft md:p-9"
+        className="mx-auto max-w-5xl overflow-hidden rounded-lg border border-cyan-400/15 bg-gradient-to-br from-[#0c1a2b] via-[#0a1728] to-[#07111f] p-6 md:p-9"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.35 }}

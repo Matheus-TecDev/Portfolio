@@ -7,7 +7,6 @@ const featuredProjectMeta = [
     key: "relay",
     github: "https://github.com/Matheus-TecDev/Relay",
     documentation: "https://github.com/Matheus-TecDev/Relay/blob/main/docs/architecture.md",
-    image: "/projects/relay-dashboard.png",
     icon: GitBranch,
   },
   {
@@ -39,7 +38,6 @@ export function getFeaturedProjects(projects: Translation["projects"]): Project[
         { label: projects.links.github, href: meta.github },
         { label: projects.links.documentation, href: meta.documentation },
       ],
-      image: "image" in meta ? { src: meta.image, alt: content.imageAlt } : undefined,
       icon: meta.icon,
     };
   });
